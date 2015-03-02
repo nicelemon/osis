@@ -11,34 +11,89 @@ $(function() {
 
 //// Forever stuff - probably shouldn't remove
 
+var loopNothing = new SeamlessLoop();
+var loopAmen = new SeamlessLoop();
+var loopFunky = new SeamlessLoop();
 
-// // Seamless Audio Loop stuff
-// loop = new SeamlessLoop();
+// Toggle volume
+function toggle(button) {
+  if (button.value == "OFF") {
+    button.value = "ON";
+    loopAmen.volume(0);
+    loopFunky.stop();
+  } else {
+    button.value = "OFF";
+    loopAmen.volume(1);
+  }
+}
 
-// //check if the browser can play MP3's. If not, use ogg.
-// var audio  = document.createElement("audio"),
-// canPlayMP3 = (typeof audio.canPlayType === "function" &&
-//               audio.canPlayType("audio/mpeg") !== "");
-// if (canPlayMP3===true) {
-//   loop.addUri("/music/amen_loop.mp3", 2810, "sound1");
-//   loop.addUri("/music/amen_loop.mp3", 2810, "sound2");
-// } else {
-//   loop.addUri("/music/amen_loop.ogg", 2810, "sound1");
-//   loop.addUri("/music/amen_loop.ogg", 2810, "sound2");
-// }
+// Seamless Audio Loop stuff
 
-// function soundsLoaded() {
+//check if the browser can play MP3's. If not, use ogg.
+var audio  = document.createElement("audio"),
+canPlayMP3 = (typeof audio.canPlayType === "function" &&
+              audio.canPlayType("audio/mpeg") !== "");
+if (canPlayMP3===true) {
+  loopAmen.addUri("/music/amen_break_0.mp3", 2810, "sound1");
+  loopAmen.addUri("/music/amen_break_0.mp3", 2810, "sound2");
+  loopFunky.addUri("/music/funky_drummer_0.mp3", 8750, "sound1");
+  loopFunky.addUri("/music/funky_drummer_0.mp3", 8750, "sound2");
+  loopNothing.addUri("", 0, "sound1");
+  loopNothing.addUri("", 0, "sound2");
+} else {
+  loopAmen.addUri("/music/amen_break_0.ogg", 2810, "sound1");
+  loopAmen.addUri("/music/amen_break_0.ogg", 2810, "sound2");
+  loopFunky.addUri("/music/funky_drummer_0.ogg", 8750, "sound1");
+  loopFunky.addUri("/music/funky_drummer_0.ogg", 8750, "sound2");
+  loopNothing.addUri("", 0, "sound1");
+  loopNothing.addUri("", 0, "sound2");
+}
+
+function soundsLoadedAmen() {
+  var n = 1;
+  loopAmen.start("sound" + n);
+  // n++;
+  // loopAmen.update("sound" + n, false);
+};
+
+loopAmen.callback(soundsLoadedAmen);
+
+// Toggle loop
+function toggle(button) {
+  if (button.value == "OFF") {
+    button.value = "ON";
+    loopAmen.volume(0);
+    loopFunky.stop();
+  } else {
+    button.value = "OFF";
+    loopAmen.volume(1);
+  }
+}
+
+// function soundsLoadedFunky() {
 //   var n = 1;
-//   loop.start("sound" + n);
+//   loopFunky.start("sound" + n);
 //   n++;
-//   loop.update("sound" + n, false);
+//   loopFunky.update("sound" + n, false);
 // };
 
-// loop.callback(soundsLoaded);
+// loopFunky.callback(soundsLoadedFunky);
 
-// Initialize scroll snapping stuff
+// function soundsLoadedNothing() {
+//   var n = 1;
+//   loopNothing.start("sound" + n);
+//   n++;
+//   loopNothing.update("sound" + n, false);
+// };
+
+// loopNothing.callback(soundsLoadedNothing);
+
+// var volume = 1;
+
+
 $(document).ready(function() {
 
+// Initialize scroll snapping stuff
 	$('#fullpage').fullpage({
 		anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'lastPage'],
 		menu: '#menu',
@@ -48,7 +103,7 @@ $(document).ready(function() {
         autoScrolling: true,
         fitToSection: true,
         scrollBar: true,
-        easing: 'easeInQuart',
+        easing: 'easeInOutCubic',
         easingcss3: 'ease',
         // loopBottom: true,
         // loopTop: true,
@@ -60,14 +115,23 @@ $(document).ready(function() {
 
         onLeave: function(index, nextIndex, direction){
             var leavingSection = $(this);
+            var volume = 1;
 
 			//after leaving section 1
             if (direction =='down') {
-                document.getElementById("consoleContent").innerHTML = "Going down!";
+            	// var trackSelect = 1;
+                // document.getElementById("consoleTrackNumber").innerHTML = trackNumber;
+                // document.getElementById("consoleTrackSelect").innerHTML = trackSelect;
+                // document.getElementById("button1").value='ON' ;
+                // loop.volume(0);
             }
 
             else if (direction =='up') {
-            	document.getElementById("consoleContent").innerHTML = "Going up!";
+            	// var trackSelect = 3;
+            	// document.getElementById("consoleTrackNumber").innerHTML = trackNumber;
+            	// document.getElementById("consoleTrackSelect").innerHTML = trackSelect;
+            	// document.getElementById("button1").value='OFF' ;
+            	// loop.volume(1);
             }
 
 			// //after leaving section 1
