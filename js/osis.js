@@ -11,7 +11,32 @@ $(function() {
 
 //// Forever stuff - probably shouldn't remove
 
-// // Initialize scroll snapping stuff
+
+// // Seamless Audio Loop stuff
+// loop = new SeamlessLoop();
+
+// //check if the browser can play MP3's. If not, use ogg.
+// var audio  = document.createElement("audio"),
+// canPlayMP3 = (typeof audio.canPlayType === "function" &&
+//               audio.canPlayType("audio/mpeg") !== "");
+// if (canPlayMP3===true) {
+//   loop.addUri("/music/amen_loop.mp3", 2810, "sound1");
+//   loop.addUri("/music/amen_loop.mp3", 2810, "sound2");
+// } else {
+//   loop.addUri("/music/amen_loop.ogg", 2810, "sound1");
+//   loop.addUri("/music/amen_loop.ogg", 2810, "sound2");
+// }
+
+// function soundsLoaded() {
+//   var n = 1;
+//   loop.start("sound" + n);
+//   n++;
+//   loop.update("sound" + n, false);
+// };
+
+// loop.callback(soundsLoaded);
+
+// Initialize scroll snapping stuff
 $(document).ready(function() {
 
 	$('#fullpage').fullpage({
