@@ -20,11 +20,11 @@ var audio  = document.createElement("audio"),
 canPlayMP3 = (typeof audio.canPlayType === "function" &&
               audio.canPlayType("audio/mpeg") !== "");
 if (canPlayMP3===true) {
-  loop.addUri("/music/amen_break_0.mp3", 2810, "sound1");
+  loop.addUri("/music/amen_break_0.mp3", 2810, "secondPage");
   // loop.addUri("/music/amen_break_0.mp3", 2810, "sound2");
-  loop.addUri("/music/funky_drummer_0.mp3", 8750, "sound2");
+  loop.addUri("/music/funky_drummer_0.mp3", 8750, "3rdPage");
   // loop.addUri("/music/funky_drummer_0.mp3", 8750, "sound2");
-  loop.addUri("", 0, "sound3");
+  loop.addUri("", 0, "firstPage");
   // loop.addUri("", 0, "sound2");
 } else {
   loop.addUri("/music/amen_break_0.ogg", 2810, "sound1");
@@ -38,7 +38,7 @@ if (canPlayMP3===true) {
 var trackNumber = 1;
 
 function soundsLoadedAmen() {
-  loop.start("sound" + trackNumber);
+  loop.start("firstPage");
   // n++;
   // loopAmen.update("sound" + n, false);
 };
@@ -172,9 +172,11 @@ $(document).ready(function() {
 	});
 
 	$(window).on('hashchange', function () {
+		var hash = location.hash.replace( /^#/, '' );
+		document.getElementById("consoleHashNumber").innerHTML =  hash;
 	    var trackNumber = 2;
 	    loop.stop();
-		loop.start("sound" + trackNumber);
+		loop.start(hash);
 	});
 
 });	
