@@ -11,62 +11,60 @@ $(function() {
 
 //// Forever stuff - probably shouldn't remove
 
-var loopNothing = new SeamlessLoop();
-var loopAmen = new SeamlessLoop();
-var loopFunky = new SeamlessLoop();
-
-// Toggle volume
-function toggle(button) {
-  if (button.value == "OFF") {
-    button.value = "ON";
-    loopAmen.volume(0);
-    loopFunky.stop();
-  } else {
-    button.value = "OFF";
-    loopAmen.volume(1);
-  }
-}
 
 // Seamless Audio Loop stuff
+var loop = new SeamlessLoop();
 
 //check if the browser can play MP3's. If not, use ogg.
 var audio  = document.createElement("audio"),
 canPlayMP3 = (typeof audio.canPlayType === "function" &&
               audio.canPlayType("audio/mpeg") !== "");
 if (canPlayMP3===true) {
-  loopAmen.addUri("/music/amen_break_0.mp3", 2810, "sound1");
-  loopAmen.addUri("/music/amen_break_0.mp3", 2810, "sound2");
-  loopFunky.addUri("/music/funky_drummer_0.mp3", 8750, "sound1");
-  loopFunky.addUri("/music/funky_drummer_0.mp3", 8750, "sound2");
-  loopNothing.addUri("", 0, "sound1");
-  loopNothing.addUri("", 0, "sound2");
+  loop.addUri("/music/amen_break_0.mp3", 2810, "sound1");
+  // loop.addUri("/music/amen_break_0.mp3", 2810, "sound2");
+  loop.addUri("/music/funky_drummer_0.mp3", 8750, "sound2");
+  // loop.addUri("/music/funky_drummer_0.mp3", 8750, "sound2");
+  loop.addUri("", 0, "sound3");
+  // loop.addUri("", 0, "sound2");
 } else {
-  loopAmen.addUri("/music/amen_break_0.ogg", 2810, "sound1");
-  loopAmen.addUri("/music/amen_break_0.ogg", 2810, "sound2");
-  loopFunky.addUri("/music/funky_drummer_0.ogg", 8750, "sound1");
-  loopFunky.addUri("/music/funky_drummer_0.ogg", 8750, "sound2");
-  loopNothing.addUri("", 0, "sound1");
-  loopNothing.addUri("", 0, "sound2");
+  loop.addUri("/music/amen_break_0.ogg", 2810, "sound1");
+  // loop.addUri("/music/amen_break_0.ogg", 2810, "sound2");
+  loop.addUri("/music/funky_drummer_0.ogg", 8750, "sound1");
+  // loop.addUri("/music/funky_drummer_0.ogg", 8750, "sound2");
+  loop.addUri("", 0, "sound1");
+  // loop.addUri("", 0, "sound2");
 }
 
+var trackNumber = 1;
+
 function soundsLoadedAmen() {
-  var n = 1;
-  loopAmen.start("sound" + n);
+  loop.start("sound" + trackNumber);
   // n++;
   // loopAmen.update("sound" + n, false);
 };
 
-loopAmen.callback(soundsLoadedAmen);
+loop.callback(soundsLoadedAmen);
 
-// Toggle loop
+// // Toggle loop
+// function toggle(button) {
+//   if (button.value == "OFF") {
+//     button.value = "ON";
+//     loop.stop();
+//   } else {
+//     button.value = "OFF";
+//     loop.stop();
+//     loop.start("sound" + trackNumber);
+//   }
+// }
+
+// Toggle volume
 function toggle(button) {
   if (button.value == "OFF") {
     button.value = "ON";
-    loopAmen.volume(0);
-    loopFunky.stop();
+    loop.volume(0);
   } else {
     button.value = "OFF";
-    loopAmen.volume(1);
+    loop.volume(1);
   }
 }
 
@@ -79,16 +77,8 @@ function toggle(button) {
 
 // loopFunky.callback(soundsLoadedFunky);
 
-// function soundsLoadedNothing() {
-//   var n = 1;
-//   loopNothing.start("sound" + n);
-//   n++;
-//   loopNothing.update("sound" + n, false);
-// };
 
-// loopNothing.callback(soundsLoadedNothing);
-
-// var volume = 1;
+// Hashchange testing
 
 
 $(document).ready(function() {
@@ -113,26 +103,29 @@ $(document).ready(function() {
         touchSensitivity: 15,
         normalScrollElementTouchThreshold: 5,
 
-        onLeave: function(index, nextIndex, direction){
-            var leavingSection = $(this);
-            var volume = 1;
+   //      onLeave: function(index, nextIndex, direction){
+   //          var leavingSection = $(this);
 
-			//after leaving section 1
-            if (direction =='down') {
-            	// var trackSelect = 1;
-                // document.getElementById("consoleTrackNumber").innerHTML = trackNumber;
-                // document.getElementById("consoleTrackSelect").innerHTML = trackSelect;
-                // document.getElementById("button1").value='ON' ;
-                // loop.volume(0);
-            }
+			// after leaving section 1
+   //          if (direction =='down') {
+   //          	loop.stop();
+			//     loop.start("sound" + 2);
+   //          	var trackSelect = 1;
+   //              document.getElementById("consoleTrackNumber").innerHTML = trackNumber;
+   //              document.getElementById("consoleTrackSelect").innerHTML = trackSelect;
+   //              document.getElementById("button1").value='ON' ;
+   //              loop.volume(0);
+   //          }
 
-            else if (direction =='up') {
-            	// var trackSelect = 3;
-            	// document.getElementById("consoleTrackNumber").innerHTML = trackNumber;
-            	// document.getElementById("consoleTrackSelect").innerHTML = trackSelect;
-            	// document.getElementById("button1").value='OFF' ;
-            	// loop.volume(1);
-            }
+   //          else if (direction =='up') {
+   //          	loop.stop();
+			//     loop.start("sound" + 1);
+   //          	var trackSelect = 3;
+   //          	document.getElementById("consoleTrackNumber").innerHTML = trackNumber;
+   //          	document.getElementById("consoleTrackSelect").innerHTML = trackSelect;
+   //          	document.getElementById("button1").value='OFF' ;
+   //          	loop.volume(1);
+   //          }
 
 			// //after leaving section 1
    //          if(index == 1 && direction =='down'){
@@ -174,8 +167,14 @@ $(document).ready(function() {
    //          else if(index == 3 && direction == 'up'){
    //              document.getElementById("consoleContent").innerHTML = "Going to section 2!";
    //          }
-        }
+   //      }
 
+	});
+
+	$(window).on('hashchange', function () {
+	    var trackNumber = 2;
+	    loop.stop();
+		loop.start("sound" + trackNumber);
 	});
 
 });	
