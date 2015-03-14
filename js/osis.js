@@ -30,17 +30,17 @@ $(document).ready(function() {
 			pageY = event.pageY || event.clientY,
 			pageX = (pageX - el.offset().left) - (w / 2),
 			pageY = (pageY - el.offset().top) - (h / 2),
-			newX = Math.round(((sw * pageX)) * - 1),
-			newY = Math.round(((sh * pageY)) * - 1),
-			negX = (newX / 5) * - 1,
-			negY = (newY / 5) * - 1;
-		$(".shady").css({
-			"-webkit-box-shadow: 21px 23px 55px -8px rgba(0,0,0,0.55);",
+			newX = Math.round(sw * pageX),
+			newY = Math.round(sh * pageY),
+			negX = Math.round((newX / 5)) * - 1,
+			negY = Math.round((newY / 5)) * - 1;
+		$(".boxy").css({
+			"box-shadow": newX + "px " + newY + "px 25px -7px rgba(0,0,0,0.4)",
 			"top": negY,
 			"left": negX
 	    });
-		$(".outlined").css({
-			"webkit-filter": "drop-shadow(" + newX + "px " + newY + "px 5px rgba(0,0,0,0.3))",
+		$(".shady").css({
+			"webkit-filter": "drop-shadow(" + newX + "px " + newY + "px 5px rgba(0,0,0,0.4))",
 			"top": negY,
 			"left": negX
 		});
