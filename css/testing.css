@@ -1,0 +1,39 @@
+/* testing code */
+.squig-wrapper {
+  position:relative;
+}
+.crop-top {
+  position:absolute;
+  height:130px;
+  width:30%;
+  overflow:hidden;
+  display:inline-block;
+}
+.crop-bottom {
+  margin-top:13%;
+  position:absolute;
+  height:200px;
+  width:30%;
+  overflow:hidden;
+  display:inline-block;
+}
+.line {
+     width:90%;
+     padding-bottom:90%;
+     -webkit-border-radius: 90% 90% 0 0;
+     border:10px solid green;
+     border-bottom:none;
+}
+.crop-bottom .line {
+  -webkit-border-radius: 0 0 90% 90%;
+  border-top:none;
+  border-bottom:10px solid green;
+  margin-top:-50%;
+}
+.right {
+  right:20%;
+}
+.mid {
+  left:28%;
+}
+/* testing code */
