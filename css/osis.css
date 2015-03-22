@@ -55,15 +55,27 @@ video {
 	margin-right: 10%;
 }
 
-/* Animation */
-div.sprite {
+/* Animations */
+div#headspin {
 	background-image: url("/img/headspin.png");
     background-position: 0 0;
     background-size: 3700%;
-    -webkit-animation: play 1.7s steps(37) infinite;
+    -webkit-animation: headspin 1.7s steps(37) infinite;
 }
-@-webkit-keyframes play {
+@-webkit-keyframes headspin {
     100% { background-position: 3700%; }
+}
+div#ratcrawl {
+	background-image: url("/img/ratcrawl-4.png");
+    background-position: 0 0;
+    background-size: 2600%;
+    -webkit-animation: ratcrawl 1.7s steps(26) infinite;
+}
+@-webkit-keyframes ratcrawl {
+    100% { 
+    	background-position: 2600%;
+    	/*top:4vw; */
+    }
 }
 
 /* Menu CSS */
