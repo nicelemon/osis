@@ -16,19 +16,6 @@ $(document).ready(function() {
     touchSensitivity: 15,
     normalScrollElementTouchThreshold: 5,
 
-    onLeave: function(index, nextIndex, direction){
-      var vid = document.getElementById("headSpin");
-      if (index == 1 && direction == "down") {
-        vid.play();
-      }
-      else if (index == 2 && direction == "up" || direction == "down") {
-        vid.pause();
-      }
-      else if (index == 3 && direction == "up") {
-        vid.play();
-      };
-    }
-
 	});
 
 });
