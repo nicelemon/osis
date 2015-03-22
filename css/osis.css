@@ -66,7 +66,7 @@ div#headspin {
     100% { background-position: 3700%; }
 }
 div#ratcrawl {
-	background-image: url("/img/ratcrawl-4.png");
+	background-image: url("/img/ratcrawl.png");
     background-position: 0 0;
     background-size: 2600%;
     -webkit-animation: ratcrawl 1.7s steps(26) infinite;
