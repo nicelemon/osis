@@ -32,13 +32,13 @@ $(document).ready(function() {
 			pageY = (pageY - el.offset().top) - (h / 2),
 			newX = Math.round(sw * pageX),
 			newY = Math.round(sh * pageY),
-			negX = Math.round((newX / 5)) * - 1,
-			negY = Math.round((newY / 5)) * - 1;
-		$(".boxy").css({
-			"box-shadow": newX + "px " + newY + "px 25px -7px rgba(0,0,0,0.4)",
-			"top": negY,
-			"left": negX
-	    });
+			negX = Math.round((newX / 4)) * - 1,
+			negY = Math.round((newY / 4)) * - 1;
+		// $(".boxy").css({
+		// 	"box-shadow": newX + "px " + newY + "px 25px -7px rgba(0,0,0,0.4)",
+		// 	"top": negY,
+		// 	"left": negX
+	 //    });
 		$(".shady").css({
 			"webkit-filter": "drop-shadow(" + newX + "px " + newY + "px 5px rgba(0,0,0,0.4))",
 			"top": negY,
