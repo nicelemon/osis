@@ -80,6 +80,13 @@ video#dirtyGround {
 	background: url(/vid/dirty-ground.png) no-repeat;
 	background-size: cover;
 }
+video#clouds {
+	position: absolute; right: 0; bottom: 0;
+	min-width: 100%; min-height: 100%;
+	width: auto; height: auto; z-index: -101;
+	background: url(/vid/clouds.png) no-repeat;
+	background-size: cover;
+}
 
 /* Menu CSS */
 #menu li {

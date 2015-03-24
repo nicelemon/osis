@@ -27,6 +27,19 @@ $(document).ready(function() {
             else if (index == 3 && direction == "up") {
                 vid.play();
             };
+            var vid = document.getElementById("clouds");
+            if (index == 1 && direction == "down") {
+                vid.play();
+            }
+            else if (index == 2 && direction == "down") {
+                vid.play();
+            }
+            else if (index == 3 && direction == "up" || direction == "down") {
+                vid.pause();
+            }
+            else if (index == 4 && direction == "up") {
+                vid.play();
+            };
         }
 
 	});
