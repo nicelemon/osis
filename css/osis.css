@@ -4,6 +4,26 @@
  *
  * Copyright (C) 2015 osis.tv - A project by @zahgck
  */
+body {
+	background-color: blue;
+}
+/*video {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -9999;
+	background-size: cover;
+}*/
+#fullpage {
+	right: 0;
+	-webkit-box-shadow: 20px 2px 66px 26px rgba(0,0,0,0.4);
+	z-index: 1;
+}
+
 .section {
 	overflow: hidden;
 }
@@ -88,7 +108,69 @@ video#clouds {
 }
 
 /* Menu CSS */
-#menu li {
+.navigation {
+  /* critical sizing and position styles */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  text-align: right;
+  padding: 30px;
+  list-style: none;
+  font-size: 1.5em;
+  line-height: 2em;
+  right: 0;
+  z-index: 0;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: .2em;
+  /*font-family: courier;*/
+}
+.navigation a {
+	color: white;
+	text-decoration: none;
+}
+.navigation a:hover {
+	text-decoration: underline;
+}
+.nav-trigger {
+  /* critical styles - hide the checkbox input */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+label[for="nav-trigger"] {
+  /* critical positioning styles */
+  position: fixed;
+  right: 15px; top: 15px;
+  z-index: 2;
+  
+  /* non-critical apperance styles */
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' fill='white' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+  background-size: contain;
+}
+
+.nav-trigger + label {
+  transition: right 0.3s, opacity 0.3s ease-in-out;
+  opacity: .5;
+}
+label:hover {
+	opacity: 1;
+}
+#fullpage {
+  transition: right 0.3s;
+}
+.nav-trigger:checked + label {
+  right: 315px;
+}
+
+.nav-trigger:checked ~ #fullpage {
+  right: 300px;
+}
+
+
+/*#menu li {
 	display:inline-block;
 	margin: 10px;
 	color: #000;
@@ -129,4 +211,4 @@ video#clouds {
 	width: 100%;
 	padding: 0;
 	margin:0;
-}
+}*/
