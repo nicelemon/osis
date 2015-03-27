@@ -13,54 +13,52 @@
 	<link rel="stylesheet" type="text/css" href="/css/animate.css">
 	<link rel="stylesheet" type="text/css" href="/css/testing.css">
 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-	<script type="text/javascript" src="/js/seamlessloop.js"></script>
-
-	<!-- This following line is needed only in case of using other easing effect rather than "linear", "swing" or "easeInQuart". You can also add the full jQuery UI instead of this file if you prefer -->
-	<script type="text/javascript" src="/js/jquery.easings.min.js"></script>
-
-	<!-- This following line needed in the case of using the plugin option `scrollOverflow:true` -->
-	<script type="text/javascript" src="/js/jquery.slimscroll.min.js"></script>
-	<script type="text/javascript" src="/js/jquery.fullPage.js"></script>
-
-	<!-- My stuff -->
-	<script type="text/javascript" src="/js/osis.js"></script>
-	<script type="text/javascript" src="/js/osis-fullpage-controls.js"></script>
 </head>
-<body>
+<body class="bg-fresh">
 	<div id="fullpage">
 		<div class="section" id="section9">
-			<div class="outer bg-fresh">
-				<img class="centered shady" src="/img/scoliosis.png">
+			<div class="outer">
+				<img class="centered shady" id="scoliosisImg" src="/img/scoliosis.png">
 			</div>
 		</div>
 		<div class="section" id="section8">
-			<div class="outer">
-				<div id="ratcrawl" class="square centered shady"></div>
+			<div class="outer" id="ratWrap">
+				<div id="ratcrawl" class="square centered shady off"></div>
 				<video autoplay loop id="dirtyGround">
 					<source src="vid/dirty-ground.mp4" type="video/mp4">
 				</video>
 			</div>
 		</div>
 		<div class="section" id="section7">
-			<div class="outer">
-				<div id="headspin" class="square centered shady"></div>
+			<div class="outer" id="headWrap">
+				<div id="headspin" class="square centered shady off"></div>
 				<video autoplay loop id="clouds">
-					<source src="vid/clouds13.mp4" type="video/mp4">
+					<source src="vid/clouds0.mp4" type="video/mp4">
 				</video>
 			</div>
 		</div>
 		<div class="section" id="section6">
-			<div class="outer bg-fresh" >
+			<div class="outer bg-fresh" id="flippinWrap">
 				<div class="rect centered bg-fresh shady"></div>
 			</div>
 		</div>
 		<div class="section" id="section5">
-			<div class="outer bg-fresh">
+			<div class="outer bg-fresh" id="uncleWrap">
 				<div class="rect centered border-fresh outlined shady" id="lilGuy"></div>
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	<!-- This following line is needed only in case of using other easing effect rather than "linear", "swing" or "easeInQuart". You can also add the full jQuery UI instead of this file if you prefer -->
+	<script type="text/javascript" src="/js/jquery.easings.min.js"></script>
+
+	<script type="text/javascript" src="/js/jquery.fullPage.js"></script>
+
+	<!-- My stuff -->
+	<script type="text/javascript" src="/js/osis.js"></script>
+	<script type="text/javascript" src="/js/osis-fullpage-controls.js"></script>
+
 </body>
 </html>
