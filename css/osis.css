@@ -7,7 +7,7 @@
 body {
 	background-color: blue;
 }
-/*video {
+video {
 	position: fixed;
 	right: 0;
 	bottom: 0;
@@ -17,7 +17,7 @@ body {
 	height: auto;
 	z-index: -9999;
 	background-size: cover;
-}*/
+}
 #fullpage {
 	right: 0;
 	-webkit-box-shadow: 20px 2px 66px 26px rgba(0,0,0,0.4);
@@ -108,7 +108,7 @@ video#clouds {
 }
 
 /* Menu CSS */
-.navigation {
+.navigation, .tree {
   /* critical sizing and position styles */
   width: 100%;
   height: 100%;
@@ -116,21 +116,53 @@ video#clouds {
   text-align: right;
   padding: 30px;
   list-style: none;
-  font-size: 1.5em;
+  font-size: 1.1em;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   line-height: 2em;
   right: 0;
   z-index: 0;
   font-style: italic;
-  font-weight: 900;
+  /*font-weight: 900;*/
   letter-spacing: .2em;
   /*font-family: courier;*/
 }
 .navigation a {
-	color: white;
+	color: yellow;
 	text-decoration: none;
+	position: relative;
+	top: 24px;
+	right: 32px;
+}
+a.navigation {
+	right: 44px;
+	z-index: 1;
+	height: 25px;
+	width: 101px;
+}
+a.navigation:hover {
+	text-decoration: none;
+}
+span.navigation {
+	font-size: .8em;
+	letter-spacing: .0em;
+	top: 7px;
+	color: rgb(85, 26, 139);
 }
 .navigation a:hover {
 	text-decoration: underline;
+}
+.tree li {
+	border-right: 2px solid yellow;
+	border-bottom: 2px solid yellow;
+	width: 23px;
+	float: right;
+	height: 33px;
+	clear: both;
+	position: relative;
+	top: 18px;
+}
+.tree li.top {
+	height: 25px;
 }
 .nav-trigger {
   /* critical styles - hide the checkbox input */
@@ -162,11 +194,16 @@ label:hover {
   transition: right 0.3s;
 }
 .nav-trigger:checked + label {
-  right: 315px;
+  right: 345px;
 }
 
 .nav-trigger:checked ~ #fullpage {
-  right: 300px;
+  right: 330px;
+}
+#menu li.active{
+	background:#666;
+	background: rgba(0,0,0, 0.5);
+	color: #fff;
 }
 
 

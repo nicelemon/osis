@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 // Initialize scroll snapping stuff
 	$('#fullpage').fullpage({
-		anchors: ['welcome', 'rat', 'head', 'nothing', 'nothing2'],
+		anchors: ['hi', 'one', 'two', 'three', 'four'],
 		menu: '#menu',
         css3: true,
         scrollingSpeed: 700,
