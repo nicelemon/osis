@@ -22,6 +22,8 @@ video {
 	right: 0;
 	-webkit-box-shadow: 20px 2px 66px 26px rgba(0,0,0,0.4);
 	z-index: 1;
+	transition: right 0.3s;
+	background-color: rgb(255, 194, 243);
 }
 
 .section {
@@ -169,35 +171,38 @@ span.navigation {
   position: absolute;
   clip: rect(0, 0, 0, 0);
 }
-label[for="nav-trigger"] {
+button {
+	background: none;
+	border: none;
+	padding: 0;
+	outline:0 !important;
+}
+button#menuButton {
   /* critical positioning styles */
   position: fixed;
   right: 15px; top: 15px;
   z-index: 2;
   
   /* non-critical apperance styles */
-  height: 30px;
-  width: 30px;
+  height: 46px;
+  width: 51px;
   cursor: pointer;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' fill='white' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+  background-image: url("/img/menu.svg");
   background-size: contain;
-}
-
-.nav-trigger + label {
   transition: right 0.3s, opacity 0.3s ease-in-out;
   opacity: .5;
 }
-label:hover {
+
+button#menuButton {
+}
+button#menuButton:hover {
 	opacity: 1;
 }
-#fullpage {
-  transition: right 0.3s;
-}
-.nav-trigger:checked + label {
+button#menuButton.open {
   right: 345px;
 }
 
-.nav-trigger:checked ~ #fullpage {
+#fullpage.open {
   right: 330px;
 }
 #menu li.active{

@@ -14,12 +14,19 @@ $(function() {
 
 
 //// Forever stuff - probably shouldn't remove
-
-
 $(document).ready(function() {
 
-// Shadow postitioning
-	$( ".section" ).mousemove(function( event ) {
+	$('#menuButton').on('click', function() {
+		$('#menuButton').toggleClass("open");
+		$('#fullpage').toggleClass("open");
+    });
+    $('#fullpage').on('click', function(e) {
+		$('#menuButton').removeClass("open");
+		$('#fullpage').removeClass("open");
+		e.preventDefault();
+    });
+
+	$( ".section" ).mousemove(function( event ) { // Shadow postitioning
 		var el = $(this),
 			strength = 80,
 			h = el.outerHeight(),
