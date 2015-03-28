@@ -16,6 +16,10 @@ $(function() {
 //// Forever stuff - probably shouldn't remove
 $(document).ready(function() {
 
+	$("#scoliosisImg").fadeIn(2000);
+	$("#nav").fadeIn(2000);
+	$("#menuButton").removeClass("see-through");
+
 	$('#menuButton').on('click', function() {
 		$('#menuButton').toggleClass("open");
 		$('#fullpage').toggleClass("open");

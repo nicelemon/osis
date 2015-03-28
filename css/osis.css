@@ -5,7 +5,7 @@
  * Copyright (C) 2015 osis.tv - A project by @zahgck
  */
 body {
-	background-color: blue;
+	background-color: rgb(255, 194, 243);
 }
 video {
 	position: fixed;
@@ -44,9 +44,14 @@ video {
 	width: 50vw;
 	height: 50vw;
 }
+.inner {
+	padding:5%;
+	overflow: hidden;
+}
 .rect {
 	width: 75vw;
 	height: 75vh;
+	overflow: hidden;
 }
 .circle {
 	border-radius: 100%;
@@ -70,8 +75,11 @@ video {
 }
 
 /* Animations */
-#scoliosisImg, #ratWrap, #headWrap, #flippinWrap, #uncleWrap {
+#scoliosisImg, #ratWrap, #headWrap, #flippinWrap, #uncleWrap, #nav {
 	display: none;
+}
+.see-through {
+	opacity: 0 !important;
 }
 div#headspin {
 	background-image: url("/img/headspin.png");
@@ -111,22 +119,22 @@ video#clouds {
 
 /* Menu CSS */
 .navigation, .tree {
-  /* critical sizing and position styles */
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  text-align: right;
-  padding: 30px;
-  list-style: none;
-  font-size: 1.1em;
-  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-  line-height: 2em;
-  right: 0;
-  z-index: 0;
-  font-style: italic;
-  /*font-weight: 900;*/
-  letter-spacing: .2em;
-  /*font-family: courier;*/
+	width: 100%;
+	position: fixed;
+	text-align: right;
+	padding: 30px;
+	list-style: none;
+	font-size: 1.1em;
+	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+	line-height: 2em;
+	right: 0;
+	z-index: 0;
+	font-style: italic;
+	letter-spacing: .2em;
+}
+#etcetera {
+	bottom: 0;
+	right: -40px;
 }
 .navigation a {
 	color: yellow;
@@ -178,19 +186,17 @@ button {
 	outline:0 !important;
 }
 button#menuButton {
-  /* critical positioning styles */
-  position: fixed;
-  right: 15px; top: 15px;
-  z-index: 2;
-  
-  /* non-critical apperance styles */
-  height: 46px;
-  width: 51px;
-  cursor: pointer;
-  background-image: url("/img/menu.svg");
-  background-size: contain;
-  transition: right 0.3s, opacity 0.3s ease-in-out;
-  opacity: .5;
+	/*display: none;*/
+	position: fixed;
+	right: 15px; top: 15px;
+	z-index: 2;
+	height: 46px;
+	width: 51px;
+	cursor: pointer;
+	background-image: url("/img/menu.svg");
+	background-size: contain;
+	transition: right 0.3s, opacity 0.3s ease-in-out;
+	opacity: .5;
 }
 
 button#menuButton {
@@ -210,47 +216,3 @@ button#menuButton.open {
 	background: rgba(0,0,0, 0.5);
 	color: #fff;
 }
-
-
-/*#menu li {
-	display:inline-block;
-	margin: 10px;
-	color: #000;
-	background:#fff;
-	background: rgba(255,255,255, 0.5);
-	-webkit-border-radius: 10px;
-            border-radius: 10px;
-}
-#menu li.active{
-	background:#666;
-	background: rgba(0,0,0, 0.5);
-	color: #fff;
-}
-#menu li a{
-	text-decoration:none;
-	color: #000;
-}
-#menu li.active a:hover{
-	color: #000;
-}
-#menu li:hover{
-	background: rgba(255,255,255, 0.8);
-}
-#menu li a,
-#menu li.active a{
-	padding: 9px 18px;
-	display:inline-block;
-}
-#menu li.active a{
-	color: #fff;
-}
-#menu{
-	position:fixed;
-	top:0;
-	left:0;
-	height: 40px;
-	z-index: 70;
-	width: 100%;
-	padding: 0;
-	margin:0;
-}*/

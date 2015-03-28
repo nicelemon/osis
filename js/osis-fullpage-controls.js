@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-    $("#scoliosisImg").fadeIn(2000);
     var dirtyGround = document.getElementById("dirtyGround");
     var clouds = document.getElementById("clouds");
 
