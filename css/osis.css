@@ -49,8 +49,8 @@ video {
 	overflow: hidden;
 }
 .rect {
-	width: 75vw;
-	height: 75vh;
+	width: 90vw;
+	height: 85vh;
 	overflow: hidden;
 }
 .circle {
@@ -99,7 +99,16 @@ div#ratcrawl {
 @-webkit-keyframes ratcrawl {
     100% { background-position: -2600%; }
 }
-div#ratcrawl.off, div#headspin.off {
+div#unclecry {
+	background-image: url("/img/hu_cry.png");
+    background-position: 0 0;
+    background-size: 2200%;
+    -webkit-animation: unclecry 1.2s steps(22) infinite;
+}
+@-webkit-keyframes unclecry {
+    100% { background-position: 2200%; }
+}
+div#ratcrawl.off, div#headspin.off, div#unclecry.off {
 	-webkit-animation-name: none;
 }
 video#dirtyGround {
@@ -114,6 +123,13 @@ video#clouds {
 	min-width: 100%; min-height: 100%;
 	width: auto; height: auto; z-index: -101;
 	background: url(/vid/clouds.png) no-repeat;
+	background-size: cover;
+}
+img#uncleBG {
+	position: absolute; right: 0; bottom: 0;
+	min-width: 100%; min-height: 100%;
+	width: auto; height: auto; z-index: -101;
+	background: url(/img/uncle_bg.png) no-repeat;
 	background-size: cover;
 }
 
@@ -148,6 +164,7 @@ a.navigation {
 	z-index: 1;
 	height: 25px;
 	width: 101px;
+	padding-bottom: 3px;
 }
 a.navigation:hover {
 	text-decoration: none;
