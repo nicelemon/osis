@@ -7,7 +7,7 @@
 body {
 	background-color: rgb(255, 194, 243);
 }
-video {
+/*video#absBG {
 	position: fixed;
 	right: 0;
 	bottom: 0;
@@ -17,6 +17,10 @@ video {
 	height: auto;
 	z-index: -9999;
 	background-size: cover;
+}*/
+img#absBG {
+	background: url(/img/abs.jpg) no-repeat;
+	position: fixed;
 }
 #fullpage {
 	right: 0;
@@ -73,6 +77,15 @@ video {
 .shady {
 	-webkit-filter: drop-shadow(5px 10px 5px rgba(0,0,0,0.4));
 }
+#scoliosisImg {
+	width: 60vw;
+}
+.cover {
+	position: absolute; right: 0; bottom: 0;
+	min-width: 100%; min-height: 100%;
+	width: auto; height: auto; z-index: -100;
+	background-size: cover;
+}
 
 /* Animations */
 #scoliosisImg, #ratWrap, #headWrap, #flippinWrap, #uncleWrap, #nav {
@@ -112,25 +125,13 @@ div#ratcrawl.off, div#headspin.off, div#unclecry.off {
 	-webkit-animation-name: none;
 }
 video#dirtyGround {
-	position: absolute; right: 0; bottom: 0;
-	min-width: 100%; min-height: 100%;
-	width: auto; height: auto; z-index: -100;
 	background: url(/vid/dirty-ground.png) no-repeat;
-	background-size: cover;
 }
 video#clouds {
-	position: absolute; right: 0; bottom: 0;
-	min-width: 100%; min-height: 100%;
-	width: auto; height: auto; z-index: -101;
 	background: url(/vid/clouds.png) no-repeat;
-	background-size: cover;
 }
 img#uncleBG {
-	position: absolute; right: 0; bottom: 0;
-	min-width: 100%; min-height: 100%;
-	width: auto; height: auto; z-index: -101;
-	background: url(/img/uncle_bg.png) no-repeat;
-	background-size: cover;
+	background: url(/img/uncle_bg.jpg) no-repeat;
 }
 
 /* Menu CSS */
