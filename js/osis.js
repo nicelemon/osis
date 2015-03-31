@@ -39,12 +39,12 @@ $(document).ready(function() {
 			sw = strength / w,
 			pageX = event.pageX || event.clientX,
 			pageY = event.pageY || event.clientY,
-			pageX = (pageX - el.offset().left) - (w / 2),
-			pageY = (pageY - el.offset().top) - (h / 2),
+			pageX = (pageX - el.offset().left) - (w / 2.5),
+			pageY = (pageY - el.offset().top) - (h / 2.5),
 			newX = Math.round(sw * pageX),
 			newY = Math.round(sh * pageY),
-			negX = Math.round((newX / 4)) * - 1,
-			negY = Math.round((newY / 4)) * - 1;
+			negX = Math.round((newX / 1.75)) * - 1,
+			negY = Math.round((newY /1.75)) * - 1;
 		$(".shady").css({
 			"webkit-filter": "drop-shadow(" + newX + "px " + newY + "px 5px rgba(0,0,0,0.4))",
 			"top": negY,

@@ -2,6 +2,7 @@ $(document).ready(function() {
 
     var dirtyGround = document.getElementById("dirtyGround");
     var clouds = document.getElementById("clouds");
+    var abs = document.getElementById("absBG");
 
 // Initialize scroll snapping stuff
 	$('#fullpage').fullpage({
@@ -19,32 +20,30 @@ $(document).ready(function() {
         touchSensitivity: 15,
         normalScrollElementTouchThreshold: 5,
 
-        onLeave: function(index, nextIndex, direction){
+        onLeave: function(index, nextIndex, direction){ // Begin playing before scrolling finishes and collect garbage as you go
             if (index == 1 && direction == "down") {
                 dirtyGround.play();
                 $( "#ratcrawl" ).removeClass( "off" );
-            }
-            else if (index == 2 && direction == "up" || direction == "down") {
-                dirtyGround.pause();
-            }
-            else if (index == 3 && direction == "up") {
-                dirtyGround.play();
-                $( "#ratcrawl" ).removeClass( "off" );
-            };
-            if (index == 1 && direction == "down") {
-                clouds.play();
-                $( "#headspin" ).removeClass( "off" );
             }
             else if (index == 2 && direction == "down") {
+                dirtyGround.pause();
                 clouds.play();
                 $( "#headspin" ).removeClass( "off" );
             }
-            else if (index == 3 && direction == "up" || direction == "down") {
+            else if (index == 3 && direction == "down") {
+                $( "#unclecry" ).removeClass( "off" );
+            }
+            else if (index == 3 && direction == "up") {
                 clouds.pause();
+                dirtyGround.play();
+                $( "#ratcrawl" ).removeClass( "off" );
             }
             else if (index == 4 && direction == "up") {
                 clouds.play();
-                $( "#headspin" ).removeClass( "off" );
+                $( "#unclecry" ).removeClass( "off" );
+            }
+            else if (index == 5 && direction == "up") {
+                $( "#unclecry" ).removeClass( "off" );
             };
         },
 
@@ -53,6 +52,7 @@ $(document).ready(function() {
             if(index == 1){
                 $( "#ratcrawl" ).addClass( "off" );
                 $( "#headspin" ).addClass( "off" );
+                $( "#unclecry" ).addClass( "off" );
                 dirtyGround.pause();
                 clouds.pause();
             };
@@ -60,6 +60,7 @@ $(document).ready(function() {
                 $("#ratWrap").fadeIn(2000);
                 $( "#ratcrawl" ).removeClass( "off" );
                 $( "#headspin" ).addClass( "off" );
+                $( "#unclecry" ).addClass( "off" );
                 dirtyGround.play();
                 clouds.pause();
             };
@@ -67,20 +68,23 @@ $(document).ready(function() {
                 $("#headWrap").fadeIn(2000);
                 $( "#ratcrawl" ).addClass( "off" );
                 $( "#headspin" ).removeClass( "off" );
+                $( "#unclecry" ).addClass( "off" );
                 dirtyGround.pause();
                 clouds.play();
             };
             if(index == 4){
-                $("#flippinWrap").fadeIn(2000);
+                $("#uncleWrap").fadeIn(2000);
                 $( "#ratcrawl" ).addClass( "off" );
                 $( "#headspin" ).addClass( "off" );
+                $( "#unclecry" ).removeClass( "off" );
                 dirtyGround.pause();
                 clouds.pause();
             };
             if(index == 5){
-                $("#uncleWrap").fadeIn(2000);
+                $("#flippinWrap").fadeIn(2000);
                 $( "#ratcrawl" ).addClass( "off" );
                 $( "#headspin" ).addClass( "off" );
+                $( "#unclecry" ).addClass( "off" );
                 dirtyGround.pause();
                 clouds.pause();
             };
