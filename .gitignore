@@ -1,3 +1,4 @@
 .DS_store
 unused
 aws-credentials.json
+npm-debug.log
