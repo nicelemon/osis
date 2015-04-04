@@ -60,11 +60,11 @@ $(document).ready(function() {
                 clouds.pause();
             };
             if(index == 2){
-                $("#ratWhole").fadeIn(2000);
-                $( "#ratcrawl" ).removeClass( "off" );
+                $("#uncleWrap").fadeIn(2000);
+                $( "#ratcrawl" ).addClass( "off" );
                 $( "#headspin" ).addClass( "off" );
-                $( "#unclecry" ).addClass( "off" );
-                dirtyGround.play();
+                $( "#unclecry" ).removeClass( "off" );
+                dirtyGround.pause();
                 clouds.pause();
             };
             if(index == 3){
@@ -75,14 +75,21 @@ $(document).ready(function() {
                 clouds.pause();
             };
             if(index == 4){
-                $("#uncleWrap").fadeIn(2000);
-                $( "#ratcrawl" ).addClass( "off" );
+                $("#ratWhole").fadeIn(2000);
+                $( "#ratcrawl" ).removeClass( "off" );
                 $( "#headspin" ).addClass( "off" );
-                $( "#unclecry" ).removeClass( "off" );
-                dirtyGround.pause();
+                $( "#unclecry" ).addClass( "off" );
+                dirtyGround.play();
                 clouds.pause();
             };
             if(index == 5){
+                $( "#ratcrawl" ).addClass( "off" );
+                $( "#headspin" ).addClass( "off" );
+                $( "#unclecry" ).addClass( "off" );
+                dirtyGround.pause();
+                clouds.pause();
+            };
+            if(index == 6){
                 $("#headWrap").fadeIn(2000);
                 $( "#ratcrawl" ).addClass( "off" );
                 $( "#headspin" ).removeClass( "off" );
@@ -90,12 +97,11 @@ $(document).ready(function() {
                 dirtyGround.pause();
                 clouds.play();
             };
-            if(index == 6){
-                $( "#ratcrawl" ).addClass( "off" );
-                $( "#headspin" ).addClass( "off" );
-                $( "#unclecry" ).addClass( "off" );
-                dirtyGround.pause();
-                clouds.pause();
+            if(index == 3){
+                $( "#fullpage" ).css( "background-color", "rgb(255, 194, 243)" );
+            }
+            else {
+                $( "#fullpage" ).css( "background-color", "rgb(239, 145, 223)" );
             };
         }
 
