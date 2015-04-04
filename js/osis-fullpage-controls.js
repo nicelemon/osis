@@ -6,10 +6,10 @@ $(document).ready(function() {
 
 // Initialize scroll snapping stuff
 	$('#fullpage').fullpage({
-		anchors: ['hi', 'one', 'two', 'three', 'four'],
+		anchors: ['hi', 'ratstroll.png', 'flowhida', 'hu_cry.png', 'headspin.png', 'young.gz'],
 		menu: '#menu',
         css3: true,
-        scrollingSpeed: 700,
+        scrollingSpeed: 1000,
         autoScrolling: true,
         fitToSection: true,
         scrollBar: true,
@@ -20,32 +20,35 @@ $(document).ready(function() {
         touchSensitivity: 15,
         normalScrollElementTouchThreshold: 5,
 
-        onLeave: function(index, nextIndex, direction){ // Begin playing before scrolling finishes and collect garbage as you go
-            if (index == 1 && direction == "down") {
-                dirtyGround.play();
-                $( "#ratcrawl" ).removeClass( "off" );
-            }
-            else if (index == 2 && direction == "down") {
-                dirtyGround.pause();
-                clouds.play();
-                $( "#headspin" ).removeClass( "off" );
-            }
-            else if (index == 3 && direction == "down") {
-                $( "#unclecry" ).removeClass( "off" );
-            }
-            else if (index == 3 && direction == "up") {
-                clouds.pause();
-                dirtyGround.play();
-                $( "#ratcrawl" ).removeClass( "off" );
-            }
-            else if (index == 4 && direction == "up") {
-                clouds.play();
-                $( "#unclecry" ).removeClass( "off" );
-            }
-            else if (index == 5 && direction == "up") {
-                $( "#unclecry" ).removeClass( "off" );
-            };
-        },
+        // onLeave: function(index, nextIndex, direction){ // Begin playing before scrolling finishes and collect garbage as you go
+        //     if (index == 1 && direction == "down") {
+        //         $( "#fullpage" ).css( "background-color", "rgb(156, 252, 197)" );
+        //         // dirtyGround.play();
+        //         // $( "#ratcrawl" ).removeClass( "off" );
+        //     }
+        //     else if (index == 2 && direction == "down") {
+        //         $( "#fullpage" ).css( "background-color", "rgb(162, 104, 95)" );
+        //         // dirtyGround.pause();
+        //         // clouds.play();
+        //         // $( "#headspin" ).removeClass( "off" );
+        //     }
+        //     else if (index == 3 && direction == "down") {
+        //         // $( "#unclecry" ).removeClass( "off" );
+        //     }
+        //     else if (index == 3 && direction == "up") {
+        //         $( "#fullpage" ).css( "background-color", "rgb(156, 252, 197)" );
+        //         // clouds.pause();
+        //         // dirtyGround.play();
+        //         // $( "#ratcrawl" ).removeClass( "off" );
+        //     }
+        //     else if (index == 4 && direction == "up") {
+        //         // clouds.play();
+        //         // $( "#unclecry" ).removeClass( "off" );
+        //     }
+        //     else if (index == 5 && direction == "up") {
+        //         // $( "#unclecry" ).removeClass( "off" );
+        //     };
+        // },
 
         afterLoad: function( anchorLink, index ){
 
@@ -57,7 +60,7 @@ $(document).ready(function() {
                 clouds.pause();
             };
             if(index == 2){
-                $("#ratWrap").fadeIn(2000);
+                $("#ratWhole").fadeIn(2000);
                 $( "#ratcrawl" ).removeClass( "off" );
                 $( "#headspin" ).addClass( "off" );
                 $( "#unclecry" ).addClass( "off" );
@@ -65,12 +68,11 @@ $(document).ready(function() {
                 clouds.pause();
             };
             if(index == 3){
-                $("#headWrap").fadeIn(2000);
                 $( "#ratcrawl" ).addClass( "off" );
-                $( "#headspin" ).removeClass( "off" );
+                $( "#headspin" ).addClass( "off" );
                 $( "#unclecry" ).addClass( "off" );
                 dirtyGround.pause();
-                clouds.play();
+                clouds.pause();
             };
             if(index == 4){
                 $("#uncleWrap").fadeIn(2000);
@@ -81,7 +83,14 @@ $(document).ready(function() {
                 clouds.pause();
             };
             if(index == 5){
-                $("#flippinWrap").fadeIn(2000);
+                $("#headWrap").fadeIn(2000);
+                $( "#ratcrawl" ).addClass( "off" );
+                $( "#headspin" ).removeClass( "off" );
+                $( "#unclecry" ).addClass( "off" );
+                dirtyGround.pause();
+                clouds.play();
+            };
+            if(index == 6){
                 $( "#ratcrawl" ).addClass( "off" );
                 $( "#headspin" ).addClass( "off" );
                 $( "#unclecry" ).addClass( "off" );

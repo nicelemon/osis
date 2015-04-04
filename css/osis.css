@@ -7,17 +7,6 @@
 body {
 	background-color: rgb(255, 194, 243);
 }
-/*video#absBG {
-	position: fixed;
-	right: 0;
-	bottom: 0;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	height: auto;
-	z-index: -9999;
-	background-size: cover;
-}*/
 img#absBG {
 	background: url(/img/abs.jpg) no-repeat;
 	position: fixed;
@@ -55,7 +44,6 @@ img#absBG {
 .rect {
 	width: 90vw;
 	height: 85vh;
-	overflow: hidden;
 }
 .circle {
 	border-radius: 100%;
@@ -75,7 +63,10 @@ img#absBG {
 	margin-right: 10%;
 }
 .shady {
-	-webkit-filter: drop-shadow(5px 10px 5px rgba(0,0,0,0.4));
+	-webkit-filter: drop-shadow(14px 17px 5px rgba(0,0,0,0.3));
+}
+.flowhida {
+	overflow: hidden;
 }
 #scoliosisImg {
 	width: 60vw;
@@ -86,9 +77,31 @@ img#absBG {
 	width: auto; height: auto; z-index: -100;
 	background-size: cover;
 }
+img.lazy {
+	display:none
+}
+.lazy-hidden{opacity:0}.lazy-loaded{-webkit-transition:opacity .5s;-moz-transition:opacity .5s;-ms-transition:opacity .5s;-o-transition:opacity .5s;transition:opacity .5s;opacity:1}
+.fade-load {
+	background: url(/img/loading.png);
+}
+.clouds-orange {
+	background-color: rgb(162, 104, 95) !important;
+}
+a.txt {
+	text-align: center;
+	font-style: italic;
+	font-size: 15em;
+	vertical-align: middle;
+	line-height: 85vh;
+	color: inherit;
+	text-decoration: none;
+}
+a.txt:hover {
+	border-bottom: 5px solid;
+}
 
 /* Animations */
-#scoliosisImg, #ratWrap, #headWrap, #flippinWrap, #uncleWrap, #nav {
+.hide {
 	display: none;
 }
 .see-through {
@@ -116,6 +129,7 @@ div#unclecry {
 	background-image: url("/img/hu_cry.png");
     background-position: 0 0;
     background-size: 2200%;
+    margin-right: 15%;
     -webkit-animation: unclecry 1.2s steps(22) infinite;
 }
 @-webkit-keyframes unclecry {
