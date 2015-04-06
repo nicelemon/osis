@@ -1,4 +1,8 @@
 .DS_store
 unused
 aws-credentials.json
+wpt-credentials.json
 npm-debug.log
+node_modules
+prod
+local
