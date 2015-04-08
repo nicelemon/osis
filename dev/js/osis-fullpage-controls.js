@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 // Initialize scroll snapping stuff
 	$('#fullpage').fullpage({
-		anchors: ['hi', 'ratstroll.png', 'flowhida', 'hu_cry.png', 'headspin.png', 'young.gz'],
+		anchors: ['hi', 'hu_cry.png', 'flowhida', 'ratstroll.png', 'headspin.png', 'young.gz', 'hu_cry2.png'],
 		menu: '#menu',
         css3: true,
         scrollingSpeed: 1000,
@@ -97,12 +97,20 @@ $(document).ready(function() {
                 dirtyGround.pause();
                 clouds.play();
             };
-            if(index == 3){
-                $( "#fullpage" ).css( "background-color", "rgb(255, 194, 243)" );
-            }
-            else {
-                $( "#fullpage" ).css( "background-color", "rgb(239, 145, 223)" );
+            if(index == 7){
+                $("#uncleWrap").fadeIn(2000);
+                $( "#ratcrawl" ).addClass( "off" );
+                $( "#headspin" ).addClass( "off" );
+                $( "#unclecry" ).removeClass( "off" );
+                dirtyGround.pause();
+                clouds.pause();
             };
+            // if(index == 3){
+            //     $( "#fullpage" ).css( "background-color", "rgb(255, 194, 243)" );
+            // }
+            // else {
+            //     $( "#fullpage" ).css( "background-color", "rgb(239, 145, 223)" );
+            // };
         }
 
 	});
