@@ -68,6 +68,7 @@ img#absBG {
 }
 .shady {
 	-webkit-filter: drop-shadow(14px 17px 5px rgba(0,0,0,0.3));
+	-webkit-transition: all 1s linear;
 }
 .box-shade {
 	-webkit-box-shadow: 14px 15px 16px -1px rgba(0,0,0,0.48);

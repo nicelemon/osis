@@ -68,6 +68,7 @@ $(document).ready(function() {
                 clouds.pause();
             };
             if(index == 3){
+                // $( "#lilGuy") .addClass( "shady" );
                 $( "#ratcrawl" ).addClass( "off" );
                 $( "#headspin" ).addClass( "off" );
                 $( "#unclecry" ).addClass( "off" );
