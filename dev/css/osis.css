@@ -100,13 +100,6 @@ img#absBG {
 	width: auto; height: auto; z-index: -100;
 	background-size: cover;
 }
-img.lazy {
-	display:none
-}
-.lazy-hidden{opacity:0}.lazy-loaded{-webkit-transition:opacity .5s;-moz-transition:opacity .5s;-ms-transition:opacity .5s;-o-transition:opacity .5s;transition:opacity .5s;opacity:1}
-.fade-load {
-	background: url(/img/loading.png);
-}
 .clouds-orange {
 	background-color: rgb(162, 104, 95) !important;
 }
@@ -120,8 +113,14 @@ a.txt {
 	font-size: 8vw;
 	font-family: sans-serif;
 }
-a.txt:hover {
-	border-bottom: 5px solid;
+.loading {
+	background-image: url("/img/loading.svg");
+    background-position: 0 0;
+    background-size: 1200%;
+    -webkit-animation: loading 1s steps(12) infinite;
+}
+@-webkit-keyframes loading {
+    100% { background-position: -1200%; }
 }
 
 /* Animations */
@@ -159,7 +158,7 @@ div#unclecry, div#unclecry2 {
 @-webkit-keyframes unclecry {
     100% { background-position: 2200%; }
 }
-div#ratcrawl.off, div#headspin.off, div#unclecry.off, div#unclecry2.off {
+div#ratcrawl.off, div#headspin.off, div#unclecry.off, div#unclecry2.off, div.loading.off {
 	-webkit-animation-name: none;
 }
 video#dirtyGround {
