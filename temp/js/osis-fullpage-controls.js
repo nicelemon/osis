@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 // Initialize scroll snapping stuff
 	$('#fullpage').fullpage({
-		anchors: ['hola', 'tres', 'dos', 'uno'],
+		anchors: ['hola', 'tres', 'dos', 'uno', 'cero'],
 		menu: '#menu',
         css3: true,
         scrollingSpeed: 1000,
@@ -22,20 +22,20 @@ $(document).ready(function() {
                 // });
             };
             if(index == 2){
-                $.get( "/ajax/three.html", function( data ) {
-                    $( "#tree" ).html( data );
-                });
+                // $.get( "/ajax/three.html", function( data ) {
+                //     $( "#tree" ).html( data );
+                // });
             };
             if(index == 3){
-                $.get( "/ajax/two.html", function( data ) {
-                    $( "#doo" ).html( data );
-                });
+                // $.get( "/ajax/two.html", function( data ) {
+                //     $( "#doo" ).html( data );
+                // });
             };
 
             if(index == 4){
-                $.get( "/ajax/one.html", function( data ) {
-                    $( "#won" ).html( data );
-                });
+                // $.get( "/ajax/one.html", function( data ) {
+                //     $( "#won" ).html( data );
+                // });
             };
             
         }

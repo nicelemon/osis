@@ -13,7 +13,7 @@
     //  force load all images in Opera Mini and some mobile browsers without scroll event or getBoundingClientRect()
         forceLoad = (window.onscroll === undefined || !!window.operamini || !docElement.getBoundingClientRect),
         options = {
-            autoInit: true, // auto initialize in $.ready
+            autoInit: false, // auto initialize in $.ready
             selector: 'img[data-src]', // selector for lazyloading elements
             blankImage: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
             throttle: 99, // interval (ms) for changes check
