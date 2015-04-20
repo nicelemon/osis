@@ -17,7 +17,6 @@ $(function() {
 //// Forever stuff - probably shouldn't remove
 $(document).ready(function() {
 	$("#nav").fadeIn(2000);
-	// $("#scoliosisImg").addClass( "shady" );
 	$("#menuButton").removeClass("see-through");
 
 	$('#menuButton').on('click', function() {

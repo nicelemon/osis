@@ -88,6 +88,9 @@ img#absBG {
 	background: linear-gradient(to bottom,  rgba(255,92,92,1) -1%,rgba(255,92,92,1) 0%,rgba(255,170,145,1) 66%,rgba(255,237,188,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5c5c', endColorstr='#ffedbc',GradientType=0 ); /* IE6-8 */
 }
+.permple {
+	background: rgb(255,39,252);
+}
 .flowhida {
 	overflow: hidden;
 }
