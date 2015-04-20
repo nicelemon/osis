@@ -17,9 +17,9 @@ $(document).ready(function() {
         afterLoad: function( anchorLink, index ){
 
             if(index == 1){
-                $.get( "/ajax/intro.html", function( data ) {
-                    $( "#intro" ).html( data );
-                });
+                // $.get( "/ajax/intro.html", function( data ) {
+                //     $( "#intro" ).html( data );
+                // });
             };
             if(index == 2){
                 $.get( "/ajax/three.html", function( data ) {
