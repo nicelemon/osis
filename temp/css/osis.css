@@ -6,7 +6,6 @@
  */
 body {
 	margin: 0px;
-	background-color: rgba(255,237,188,1);
 }
 
 .hide {
@@ -15,6 +14,11 @@ body {
 
 .centered {
 	margin: auto;
+	top: 0; left: 0; bottom: 0; right: 0;
+	position: absolute;
+}
+.guttered {
+	margin: 10vh 6vw 10vh 6vw;
 	top: 0; left: 0; bottom: 0; right: 0;
 	position: absolute;
 }
@@ -35,8 +39,8 @@ body {
 	height: 50vw;
 }
 .rect {
-	width: 90vw;
-	height: 85vh;
+	width: 88vw;
+	height: 80vh;
 }
 .box-shade {
 	-webkit-box-shadow: 14px 15px 16px -1px rgba(0,0,0,0.48);
@@ -81,7 +85,7 @@ body {
     100% { background-position: -1200%; }
 }
 .load-spiral {
-	background-image: url("/img/spiral.svg");
+	background-image: url("/img/spiral-2.svg");
     -webkit-animation: spin 1s infinite linear;
 	width: 25vw;
 	height: 25vw;
@@ -91,6 +95,118 @@ body {
         -webkit-transform: rotate(0deg);
     }
     100% {
-        -webkit-transform: rotate(-360deg);
+        -webkit-transform: rotate(360deg);
     };
+}
+
+/* Menu CSS */
+img#absBG {
+	background: url(/img/abs.jpg) no-repeat;
+	position: fixed;
+}
+#fullpage {
+	right: 0;
+	-webkit-box-shadow: 20px 2px 66px 26px rgba(0,0,0,0.4);
+	z-index: 1;
+	transition: right 0.3s, background-color 0.8s;
+	background-color: rgba(255,237,188,1);
+}
+.navigation, .tree {
+	width: 100%;
+	position: fixed;
+	text-align: right;
+	padding: 30px;
+	list-style: none;
+	font-size: 1.1em;
+	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+	line-height: 2em;
+	right: 0;
+	z-index: 0;
+	font-style: italic;
+	letter-spacing: .2em;
+}
+#etcetera {
+	bottom: 0;
+	right: -40px;
+}
+.navigation a {
+	color: yellow;
+	text-decoration: none;
+	position: relative;
+	top: 24px;
+	right: 32px;
+}
+a.navigation {
+	right: 44px;
+	z-index: 1;
+	height: 25px;
+	width: 101px;
+	padding-bottom: 3px;
+}
+a.navigation:hover {
+	text-decoration: none;
+}
+span.navigation {
+	font-size: .8em;
+	letter-spacing: .0em;
+	top: 7px;
+	color: rgb(85, 26, 139);
+}
+.navigation a:hover {
+	text-decoration: underline;
+}
+.tree li {
+	border-right: 2px solid yellow;
+	border-bottom: 2px solid yellow;
+	width: 23px;
+	float: right;
+	height: 33px;
+	clear: both;
+	position: relative;
+	top: 18px;
+}
+.tree li.top {
+	height: 25px;
+}
+.nav-trigger {
+  /* critical styles - hide the checkbox input */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+button {
+	background: none;
+	border: none;
+	padding: 0;
+	outline:0 !important;
+}
+button#menuButton {
+	/*display: none;*/
+	position: fixed;
+	right: 1.1vw; top: 1.1vw;
+	z-index: 2;
+	height: 3.5vw;
+	width: 3.5vw;
+	cursor: pointer;
+	background-image: url("/img/menu.svg");
+	background-size: contain;
+	transition: right 0.3s, opacity 0.3s ease-in-out;
+	opacity: .5;
+}
+
+button#menuButton {
+}
+button#menuButton:hover {
+	opacity: 1;
+}
+button#menuButton.open {
+  right: 345px;
+}
+
+#fullpage.open {
+  right: 330px;
+}
+#menu li.active{
+	background:#666;
+	background: rgba(0,0,0, 0.5);
+	color: #fff;
 }

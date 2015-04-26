@@ -1,4 +1,17 @@
 $(document).ready(function() {
+    // Display menu elements
+    $("#nav").fadeIn(2000);
+    $("#menuButton").removeClass("see-through");
+
+    $('#menuButton').on('click', function() {
+        $('#menuButton').toggleClass("open");
+        $('#fullpage').toggleClass("open");
+    });
+    $('#fullpage').on('click', function(e) {
+        $('#menuButton').removeClass("open");
+        $('#fullpage').removeClass("open");
+        e.preventDefault();
+    });
     // Add content to page slides with ajax
     $.get( "/ajax/intro.html", function( data ) {
         $( "#intro" ).html( data );
