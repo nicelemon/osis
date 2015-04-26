@@ -1,4 +1,12 @@
 $(document).ready(function() {
+    // Add preloading function and preload first image
+    $.fn.preload = function() {
+        this.each(function(){
+            $('<img/>')[0].src = this;
+        });
+    }
+    $(['/img/scoliosis.png']).preload();
+
     // Display menu elements
     $("#nav").fadeIn(2000);
     $("#menuButton").removeClass("see-through");
@@ -12,7 +20,11 @@ $(document).ready(function() {
         $('#fullpage').removeClass("open");
         e.preventDefault();
     });
+
     // Add content to page slides with ajax
+    $.get( "/ajax/menu.html", function( data ) {
+        $( "#navBG" ).html( data );
+    });
     $.get( "/ajax/intro.html", function( data ) {
         $( "#intro" ).html( data );
     });
@@ -28,19 +40,13 @@ $(document).ready(function() {
     $.get( "/ajax/zero.html", function( data ) {
         $( "#ceero" ).html( data );
     });
+
     // Wait for all ajaxed content to load before initializing lazy load
     $(window).on('ajaxComplete', function() {
         setTimeout(function() {
             $(window).lazyLoadXT();
         }, 50);
     });
-
-    $.fn.preload = function() {
-        this.each(function(){
-            $('<img/>')[0].src = this;
-        });
-    }
-
-    $(['/img/1.png','/img/2.png','/img/3.png']).preload();
+    $(['/img/ratcrawl.png','/img/1.png','/img/2.png']).preload();
 
 });

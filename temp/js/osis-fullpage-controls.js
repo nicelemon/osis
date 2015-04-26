@@ -16,26 +16,29 @@ $(document).ready(function() {
 
         afterLoad: function( anchorLink, index ){
 
+            var dirtyGround = document.getElementById("dirtyGround");
+            
             if(index == 1){
-                // $.get( "/ajax/intro.html", function( data ) {
-                //     $( "#intro" ).html( data );
-                // });
+                $( "div" ).addClass( "off" );
+                dirtyGround.pause();
+                // clouds.pause();
             };
             if(index == 2){
-                // $.get( "/ajax/three.html", function( data ) {
-                //     $( "#tree" ).html( data );
-                // });
+                $( "div" ).addClass( "off" );
+                $( "#ratcrawl" ).removeClass( "off" );
+                dirtyGround.play();
+                // clouds.pause();
             };
             if(index == 3){
-                // $.get( "/ajax/two.html", function( data ) {
-                //     $( "#doo" ).html( data );
-                // });
+                $( "div" ).addClass( "off" );
+                dirtyGround.pause();
+                // clouds.pause();
             };
 
             if(index == 4){
-                // $.get( "/ajax/one.html", function( data ) {
-                //     $( "#won" ).html( data );
-                // });
+                $( "div" ).addClass( "off" );
+                dirtyGround.pause();
+                // clouds.pause();
             };
             
         }
