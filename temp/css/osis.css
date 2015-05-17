@@ -28,10 +28,32 @@ body {
 .flowhida {
 	overflow: hidden;
 }
-
 .section {
 	overflow: hidden;
 	height: 100vh;
+}
+.keep-whitespace {
+	white-space: pre;
+}
+
+/* Loading CSS */
+#loader {
+	position: fixed;
+	z-index: 3;
+	width: 100vw;
+	height: 100vh;
+	background-color: blue;
+}
+#terminal {
+	height: 70vh;
+	width: 62vw;
+	padding: 2px 5px;
+	background-color: magenta;
+	-webkit-box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.65);
+	-moz-box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.65);
+	box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.65);
+	font-family: monospace;
+	color: white;
 }
 
 /* Shapes */
