@@ -5,11 +5,15 @@ $(document).ready(function() {
             $('<img/>')[0].src = this;
         });
     }
-    $(['/img/loading.svg', '/img/scoliosis.png', '/img/menu.svg']).preload();
+    $(['/img/loading.svg', '/img/scoliosis.png', '/img/menu.svg','/vid/dirty-ground.png','/vid/clouds.png']).preload();
 
     $(window).load(function() {
         $('#loader').toggleClass("hide");
         $("#scoliosisDiv").fadeIn('slow');
+        $(['/vid/dirty-ground.mp4','/img/headspin.png','/vid/clouds.mp4']).preload();
+        $.get( "/ajax/zero.html", function( data ) {
+            $( "#ceero" ).html( data );
+        });
     });
 
     $('#menuButton').on('click', function() {
@@ -37,9 +41,6 @@ $(document).ready(function() {
     });
     $.get( "/ajax/one.html", function( data ) {
         $( "#won" ).html( data );
-    });
-    $.get( "/ajax/zero.html", function( data ) {
-        $( "#ceero" ).html( data );
     });
 
     // Wait for all ajaxed content to load before initializing lazy load

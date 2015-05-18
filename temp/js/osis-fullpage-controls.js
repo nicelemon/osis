@@ -17,28 +17,34 @@ $(document).ready(function() {
         afterLoad: function( anchorLink, index ){
 
             var dirtyGround = document.getElementById("dirtyGround");
+            var clouds = document.getElementById("clouds");
             
             if(index == 1){
                 $( "div" ).addClass( "off" );
                 dirtyGround.pause();
-                // clouds.pause();
+                clouds.pause();
             };
             if(index == 2){
                 $( "div" ).addClass( "off" );
                 $( "#ratcrawl" ).removeClass( "off" );
                 dirtyGround.play();
-                // clouds.pause();
+                clouds.pause();
             };
             if(index == 3){
                 $( "div" ).addClass( "off" );
                 dirtyGround.pause();
-                // clouds.pause();
+                clouds.pause();
             };
-
             if(index == 4){
                 $( "div" ).addClass( "off" );
                 dirtyGround.pause();
-                // clouds.pause();
+                clouds.pause();
+            };
+            if(index == 5){
+                $( "div" ).addClass( "off" );
+                $( "#headspin" ).removeClass( "off" );
+                dirtyGround.pause();
+                clouds.play();
             };
             
         }

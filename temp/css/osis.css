@@ -191,7 +191,6 @@ body {
   };
 }
 div#ratcrawl {
-	z-index: 1;
 	background-image: url("/img/ratcrawl.png");
   background-position: 0 0;
   background-size: 2600%;
@@ -200,7 +199,19 @@ div#ratcrawl {
 @-webkit-keyframes ratcrawl {
   100% { background-position: -2600%; }
 }
-div#ratcrawl.off {
+div#headspin {
+	background-image: url("/img/headspin.png");
+    background-position: 0 0;
+    background-size: 3700%;
+    -webkit-animation: headspin 1.7s steps(37) infinite;
+}
+@-webkit-keyframes headspin {
+    100% { background-position: 3700%; }
+}
+div#ratcrawl, div#headspin {
+	z-index: 1;
+}
+div#ratcrawl.off, div#headspin.off {
 	-webkit-animation-name: none;
 }
 
