@@ -5,11 +5,12 @@ $(document).ready(function() {
             $('<img/>')[0].src = this;
         });
     }
-    $(['/img/scoliosis.png']).preload();
+    $(['/img/loading.svg', '/img/scoliosis.png', '/img/menu.svg']).preload();
 
-    // Display menu elements
-    $("#nav").fadeIn(2000);
-    $("#menuButton").removeClass("see-through");
+    $(window).load(function() {
+        $('#loader').toggleClass("hide");
+        $("#scoliosisDiv").fadeIn('slow');
+    });
 
     $('#menuButton').on('click', function() {
         $('#menuButton').toggleClass("open");

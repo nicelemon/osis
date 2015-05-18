@@ -55,6 +55,11 @@ body {
 	font-family: monospace;
 	color: white;
 }
+.et-load-home {
+	width: 30vw;
+	height: 30vw;
+	margin-left: 15vw;
+}
 
 /* Shapes */
 .square {
@@ -164,12 +169,12 @@ body {
 /* Animations */
 .loading {
 	background-image: url("/img/loading.svg");
-    background-position: 0 0;
-    background-size: 1200%;
-    -webkit-animation: loading 1s steps(12) infinite;
+  background-position: 0 0;
+  background-size: 1200%;
+  -webkit-animation: loading 1s steps(12) infinite;
 }
 @-webkit-keyframes loading {
-    100% { background-position: -1200%; }
+  100% { background-position: -1200%; }
 }
 .load-spiral {
 	background-image: url("/img/spiral-2.svg");
@@ -178,22 +183,22 @@ body {
 	height: 25vw;
 }
 @-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-    };
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  };
 }
 div#ratcrawl {
 	z-index: 1;
 	background-image: url("/img/ratcrawl.png");
-    background-position: 0 0;
-    background-size: 2600%;
-    -webkit-animation: ratcrawl 1.7s steps(26) infinite;
+  background-position: 0 0;
+  background-size: 2600%;
+  -webkit-animation: ratcrawl 1.7s steps(26) infinite;
 }
 @-webkit-keyframes ratcrawl {
-    100% { background-position: -2600%; }
+  100% { background-position: -2600%; }
 }
 div#ratcrawl.off {
 	-webkit-animation-name: none;
