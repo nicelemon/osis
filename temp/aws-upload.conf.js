@@ -1,9 +1,12 @@
 module.exports = {
     credentials:"../aws-credentials.json",
-    bucketName:"osis.tv",
+    bucketName:"nocache.osis.tv",
     patterns:[
-    	"loading.svg",
-        "osis.css",
+    	"img/**",
+        "css/**",
+        "js/**",
+        "vid/**",
+        "ajax/**",
         "index.html"
     ]
 }
