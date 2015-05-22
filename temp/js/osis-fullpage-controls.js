@@ -32,11 +32,13 @@ $(document).ready(function() {
             };
             if(index == 3){
                 $( "div" ).addClass( "off" );
+                $( "#jeezy").addClass( "shady" );
                 dirtyGround.pause();
                 clouds.pause();
             };
             if(index == 4){
                 $( "div" ).addClass( "off" );
+                $( "#unclecry" ).removeClass( "off" );
                 dirtyGround.pause();
                 clouds.pause();
             };

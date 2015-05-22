@@ -5,12 +5,12 @@ $(document).ready(function() {
             $('<img/>')[0].src = this;
         });
     }
-    $(['/img/loading.svg', '/img/scoliosis.png', '/img/menu.svg','/vid/dirty-ground.png']).preload();
+    $(['/img/loading.svg', '/img/scoliosis.png', '/img/menu.svg','/vid/dirty-ground.png','/img/headspin.png']).preload();
 
     $(window).load(function() {
         $('#loader').toggleClass("hide");
         $("#scoliosisDiv").fadeIn('slow');
-        $(['/img/headspin.png','/vid/clouds.mp4']).preload();
+        // $(['/vid/dirty-ground.mp4','/img/headspin.png','/vid/clouds.mp4']).preload();
         $.get( "/ajax/zero.html", function( data ) {
             $( "#ceero" ).html( data );
         });
