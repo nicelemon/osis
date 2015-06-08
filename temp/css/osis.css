@@ -90,13 +90,25 @@ a.txt {
 }
 
 /* Shapes */
-.square {
-	width: 50vw;
-	height: 50vw;
+@media all and (orientation:landscape) {
+	.square {
+		width: 50vw;
+		height: 50vw;
+	}
+	.bigger-square {
+		width: 57vw;
+		height: 57vw;
+	}
 }
-.bigger-square {
-	width: 57vw;
-	height: 57vw;
+@media all and (orientation:portrait) {
+	.square {
+		width: 100vw;
+		height: 100vw;
+	}
+	.bigger-square {
+		width: 100vw;
+		height: 100vw;
+	}
 }
 .rect {
 	width: 88vw;
