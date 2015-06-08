@@ -23,7 +23,15 @@ body {
 }
 .shady {
 	-webkit-filter: drop-shadow(14px 17px 5px rgba(0,0,0,0.3));
+	-moz-filter: drop-shadow(14px 17px 5px rgba(0,0,0,0.3));
+	-o-filter: drop-shadow(14px 17px 5px rgba(0,0,0,0.3));
+	-ms-filter: drop-shadow(14px 17px 5px rgba(0,0,0,0.3));
+	filter: drop-shadow(14px 17px 5px rgba(0,0,0,0.3));
 	-webkit-transition: all 0.4s ease-out;
+	-moz-transition: all 0.4s ease-out;
+	-o-transition: all 0.4s ease-out;
+	-ms-transition: all 0.4s ease-out;
+	transition: all 0.4s ease-out;
 }
 .outlined {
 	border-style: solid;
@@ -69,6 +77,8 @@ a.txt {
 	background-color: #CCC;
 	-webkit-box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.9);
 	-moz-box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.9);
+	-o-box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.9);
+	-ms-box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.9);
 	box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.9);
 	font-family: monospace;
 	color: white;
@@ -95,8 +105,14 @@ a.txt {
 .box-shade {
 	-webkit-box-shadow: 14px 15px 16px -1px rgba(0,0,0,0.48);
 	-moz-box-shadow: 14px 15px 16px -1px rgba(0,0,0,0.48);
+	-o-box-shadow: 14px 15px 16px -1px rgba(0,0,0,0.48);
+	-ms-box-shadow: 14px 15px 16px -1px rgba(0,0,0,0.48);
 	box-shadow: 14px 15px 16px -1px rgba(0,0,0,0.48);
 	-webkit-transition: all 0.4s ease-out;
+	-moz-transition: all 0.4s ease-out;
+	-o-transition: all 0.4s ease-out;
+	-ms-transition: all 0.4s ease-out;
+	transition: all 0.4s ease-out;
 }
 
 /* BGs */
@@ -229,43 +245,127 @@ a.txt {
 /* Animations */
 .loading {
 	background-image: url("/img/loading.svg");
-  background-position: 0 0;
-  background-size: 1200%;
-  -webkit-animation: loading 1s steps(12) infinite;
+	background-position: 0 0;
+	background-size: 1200%;
+	-webkit-animation: loading 1s steps(12) infinite;
+	-moz-animation: loading 1s steps(12) infinite;
+	-o-animation: loading 1s steps(12) infinite;
+	-ms-animation: loading 1s steps(12) infinite;
+	animation: loading 1s steps(12) infinite;
 }
 @-webkit-keyframes loading {
-  100% { background-position: -1200%; }
+	100% { background-position: -1200%; }
+}
+@-moz-keyframes loading {
+	100% { background-position: -1200%; }
+}
+@-o-keyframes loading {
+	100% { background-position: -1200%; }
+}
+@-ms-keyframes loading {
+	100% { background-position: -1200%; }
+}
+@keyframes loading {
+	100% { background-position: -1200%; }
 }
 .load-spiral {
 	background-image: url("/img/spiral-2.svg");
     -webkit-animation: spin 1s infinite linear;
+    -moz-animation: spin 1s infinite linear;
+    -o-animation: spin 1s infinite linear;
+    -ms-animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
 	width: 25vw;
 	height: 25vw;
 }
 @-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  };
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	};
+}
+@-moz-keyframes spin {
+	0% {
+		-moz-transform: rotate(0deg);
+	}
+	100% {
+		-moz-transform: rotate(360deg);
+	};
+}
+@-o-keyframes spin {
+	0% {
+		-o-transform: rotate(0deg);
+	}
+	100% {
+		-o-transform: rotate(360deg);
+	};
+}
+@-ms-keyframes spin {
+	0% {
+		-ms-transform: rotate(0deg);
+	}
+	100% {
+		-ms-transform: rotate(360deg);
+	};
+}
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	};
 }
 div#ratcrawl {
 	background-image: url("/img/ratcrawl.png");
 	background-position: 0 0;
 	background-size: 2600%;
 	-webkit-animation: ratcrawl 1.7s steps(26) infinite;
+	-moz-animation: ratcrawl 1.7s steps(26) infinite;
+	-o-animation: ratcrawl 1.7s steps(26) infinite;
+	-ms-animation: ratcrawl 1.7s steps(26) infinite;
+	animation: ratcrawl 1.7s steps(26) infinite;
 }
 @-webkit-keyframes ratcrawl {
-  100% { background-position: -2600%; }
+	100% { background-position: -2600%; }
+}
+@-moz-keyframes ratcrawl {
+	100% { background-position: -2600%; }
+}
+@-o-keyframes ratcrawl {
+	100% { background-position: -2600%; }
+}
+@-ms-keyframes ratcrawl {
+	100% { background-position: -2600%; }
+}
+@keyframes ratcrawl {
+	100% { background-position: -2600%; }
 }
 div#headspin {
 	background-image: url("/img/headspin.png");
     background-position: 0 0;
     background-size: 3700%;
     -webkit-animation: headspin 1.7s steps(37) infinite;
+    -moz-animation: headspin 1.7s steps(37) infinite;
+    -o-animation: headspin 1.7s steps(37) infinite;
+    -ms-animation: headspin 1.7s steps(37) infinite;
+    animation: headspin 1.7s steps(37) infinite;
 }
 @-webkit-keyframes headspin {
+    100% { background-position: 3700%; }
+}
+@-moz-keyframes headspin {
+    100% { background-position: 3700%; }
+}
+@-o-keyframes headspin {
+    100% { background-position: 3700%; }
+}
+@-ms-keyframes headspin {
+    100% { background-position: 3700%; }
+}
+@keyframes headspin {
     100% { background-position: 3700%; }
 }
 div#mingwalk {
@@ -273,8 +373,24 @@ div#mingwalk {
     background-position: 0 0;
     background-size: 1400%;
     -webkit-animation: mingwalk 1.7s steps(14) infinite;
+    -moz-animation: mingwalk 1.7s steps(14) infinite;
+    -o-animation: mingwalk 1.7s steps(14) infinite;
+    -ms-animation: mingwalk 1.7s steps(14) infinite;
+    animation: mingwalk 1.7s steps(14) infinite;
 }
 @-webkit-keyframes mingwalk {
+    100% { background-position: 1400%; }
+}
+@-moz-keyframes mingwalk {
+    100% { background-position: 1400%; }
+}
+@-o-keyframes mingwalk {
+    100% { background-position: 1400%; }
+}
+@-ms-keyframes mingwalk {
+    100% { background-position: 1400%; }
+}
+@keyframes mingwalk {
     100% { background-position: 1400%; }
 }
 div#unclecry {
@@ -283,8 +399,24 @@ div#unclecry {
     background-size: 2200%;
     margin-right: 14%;
     -webkit-animation: unclecry 1.2s steps(22) infinite;
+    -moz-animation: unclecry 1.2s steps(22) infinite;
+    -o-animation: unclecry 1.2s steps(22) infinite;
+    -ms-animation: unclecry 1.2s steps(22) infinite;
+    animation: unclecry 1.2s steps(22) infinite;
 }
 @-webkit-keyframes unclecry {
+    100% { background-position: 2200%; }
+}
+@-moz-keyframes unclecry {
+    100% { background-position: 2200%; }
+}
+@-o-keyframes unclecry {
+    100% { background-position: 2200%; }
+}
+@-ms-keyframes unclecry {
+    100% { background-position: 2200%; }
+}
+@keyframes unclecry {
     100% { background-position: 2200%; }
 }
 div#ratcrawl, div#headspin, div#unclecry, div#mingwalk {
@@ -292,6 +424,10 @@ div#ratcrawl, div#headspin, div#unclecry, div#mingwalk {
 }
 div#ratcrawl.off, div#headspin.off, div#unclecry.off, div#mingwalk.off {
 	-webkit-animation-name: none;
+	-moz-animation-name: none;
+	-o-animation-name: none;
+	-ms-animation-name: none;
+	animation-name: none;
 }
 
 /* IDs */
@@ -313,7 +449,15 @@ img#absBG {
 #fullpage {
 	right: 0;
 	-webkit-box-shadow: 20px 2px 66px 26px rgba(0,0,0,0.4);
+	-moz-box-shadow: 20px 2px 66px 26px rgba(0,0,0,0.4);
+	-o-box-shadow: 20px 2px 66px 26px rgba(0,0,0,0.4);
+	-ms-box-shadow: 20px 2px 66px 26px rgba(0,0,0,0.4);
+	box-shadow: 20px 2px 66px 26px rgba(0,0,0,0.4);
 	z-index: 1;
+	-webkit-transition: right 0.3s, background-color 0.8s;
+	-moz-transition: right 0.3s, background-color 0.8s;
+	-o-transition: right 0.3s, background-color 0.8s;
+	-ms-transition: right 0.3s, background-color 0.8s;
 	transition: right 0.3s, background-color 0.8s;
 	background-color: rgba(255,237,188,1);
 }
@@ -375,9 +519,9 @@ span.navigation {
 	height: 25px;
 }
 .nav-trigger {
-  /* critical styles - hide the checkbox input */
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
+	/* critical styles - hide the checkbox input */
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
 }
 button {
 	background: none;
@@ -395,6 +539,10 @@ button#menuButton {
 	cursor: pointer;
 	background-image: url("/img/menu.svg");
 	background-size: contain;
+	-webkit-transition: right 0.3s, opacity 0.3s ease-in-out;
+	-moz-transition: right 0.3s, opacity 0.3s ease-in-out;
+	-o-transition: right 0.3s, opacity 0.3s ease-in-out;
+	-ms-transition: right 0.3s, opacity 0.3s ease-in-out;
 	transition: right 0.3s, opacity 0.3s ease-in-out;
 	opacity: .5;
 }
@@ -405,11 +553,11 @@ button#menuButton:hover {
 	opacity: 1;
 }
 button#menuButton.open {
-  right: 345px;
+	right: 345px;
 }
 
 #fullpage.open {
-  right: 330px;
+	right: 330px;
 }
 #menu li.active{
 	background:#666;
