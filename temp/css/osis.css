@@ -30,6 +30,9 @@ body {
 	border-width: 10px;
 	color: #ff5c5c;
 }
+.clear {
+	opacity: 0 !important;
+}
 a.txt {
 	text-align: center;
 	font-style: italic;
@@ -97,6 +100,9 @@ a.txt {
 }
 
 /* BGs */
+.peach {
+	background: rgb(255,92,92);
+}
 .peach-fuzz {
 	background: rgb(255,92,92); /* Old browsers */
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -246,9 +252,9 @@ a.txt {
 }
 div#ratcrawl {
 	background-image: url("/img/ratcrawl.png");
-  background-position: 0 0;
-  background-size: 2600%;
-  -webkit-animation: ratcrawl 1.7s steps(26) infinite;
+	background-position: 0 0;
+	background-size: 2600%;
+	-webkit-animation: ratcrawl 1.7s steps(26) infinite;
 }
 @-webkit-keyframes ratcrawl {
   100% { background-position: -2600%; }
@@ -262,6 +268,15 @@ div#headspin {
 @-webkit-keyframes headspin {
     100% { background-position: 3700%; }
 }
+div#mingwalk {
+	background-image: url("/img/mingwalk.png");
+    background-position: 0 0;
+    background-size: 1400%;
+    -webkit-animation: mingwalk 1.7s steps(14) infinite;
+}
+@-webkit-keyframes mingwalk {
+    100% { background-position: 1400%; }
+}
 div#unclecry {
 	background-image: url("/img/hu_cry.png");
     background-position: 0 0;
@@ -272,10 +287,10 @@ div#unclecry {
 @-webkit-keyframes unclecry {
     100% { background-position: 2200%; }
 }
-div#ratcrawl, div#headspin, div#unclecry {
+div#ratcrawl, div#headspin, div#unclecry, div#mingwalk {
 	z-index: 1;
 }
-div#ratcrawl.off, div#headspin.off, div#unclecry.off {
+div#ratcrawl.off, div#headspin.off, div#unclecry.off, div#mingwalk.off {
 	-webkit-animation-name: none;
 }
 

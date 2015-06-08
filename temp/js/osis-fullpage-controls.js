@@ -18,37 +18,62 @@ $(document).ready(function() {
 
             var dirtyGround = document.getElementById("dirtyGround");
             var clouds = document.getElementById("clouds");
+            var tiedeye = document.getElementById("tiedeye");
             
             if(index == 1){
                 $( "div" ).addClass( "off" );
+                tiedeye.pause();
                 dirtyGround.pause();
                 clouds.pause();
-            };
+            }
             if(index == 2){
                 $( "div" ).addClass( "off" );
                 $( "#ratcrawl" ).removeClass( "off" );
+                tiedeye.pause();
                 dirtyGround.play();
                 clouds.pause();
-            };
+            }
+            // if(index == 3){
+            //     $( "div" ).addClass( "off" );
+            //     $( "#jeezy").addClass( "shady" );
+            //     dirtyGround.pause();
+            //     clouds.pause();
+            // };
             if(index == 3){
                 $( "div" ).addClass( "off" );
-                $( "#jeezy").addClass( "shady" );
+                $( "#mingwalk" ).removeClass( "off" );
+                $( "#tiedeye" ).removeClass( "clear" );
+                tiedeye.play();
                 dirtyGround.pause();
                 clouds.pause();
-            };
+            }
             if(index == 4){
                 $( "div" ).addClass( "off" );
                 $( "#unclecry" ).removeClass( "off" );
+                tiedeye.pause();
                 dirtyGround.pause();
                 clouds.pause();
-            };
+            }
             if(index == 5){
                 $( "div" ).addClass( "off" );
                 $( "#headspin" ).removeClass( "off" );
+                $( "#clouds" ).removeClass( "clear" );
+                tiedeye.pause();
                 dirtyGround.pause();
                 clouds.play();
-            };
+            }
             
+        },
+
+        onLeave: function( index, nextIndex, direction ){
+
+            if(index == 3){
+                $( "#tiedeye" ).addClass( "clear" );
+            }
+            if(index == 5){
+                $( "#clouds" ).addClass( "clear" );
+            }
+
         }
 
 	});
