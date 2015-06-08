@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    console.log();
     // Add preloading function and preload first image
     $.fn.preload = function() {
         this.each(function(){
@@ -11,8 +12,8 @@ $(document).ready(function() {
         $('#loader').toggleClass("hide");
         $("#scoliosisDiv").fadeIn('slow');
         // $(['/vid/dirty-ground.mp4','/img/headspin.png','/vid/clouds.mp4']).preload();
-        $.get( "/ajax/zero.html", function( data ) {
-            $( "#ceero" ).html( data );
+        $.get( "/ajax/headspin.html", function( data ) {
+            $( "#hspin" ).html( data );
         });
     });
 
@@ -33,14 +34,17 @@ $(document).ready(function() {
     $.get( "/ajax/intro.html", function( data ) {
         $( "#intro" ).html( data );
     });
-    $.get( "/ajax/three.html", function( data ) {
-        $( "#tree" ).html( data );
+    $.get( "/ajax/ratwalk.html", function( data ) {
+        $( "#rwalk" ).html( data );
     });
-    $.get( "/ajax/two.html", function( data ) {
-        $( "#doo" ).html( data );
+    // $.get( "/ajax/threedee.html", function( data ) {
+    //     $( "#threed" ).html( data );
+    // });
+    $.get( "/ajax/mingwalk.html", function( data ) {
+        $( "#mwalk" ).html( data );
     });
-    $.get( "/ajax/one.html", function( data ) {
-        $( "#won" ).html( data );
+    $.get( "/ajax/unclecry.html", function( data ) {
+        $( "#ucry" ).html( data );
     });
 
     // Wait for all ajaxed content to load before initializing lazy load

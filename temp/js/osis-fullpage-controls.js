@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 // Initialize scroll snapping stuff
 	$('#fullpage').fullpage({
-		anchors: ['hola', 'tres', 'dos', 'uno', 'cero'],
+		anchors: ['hola', 'cuatro', 'tres', 'dos', 'uno', 'cero'],
 		menu: '#menu',
         css3: true,
         scrollingSpeed: 1000,
@@ -33,13 +33,14 @@ $(document).ready(function() {
                 dirtyGround.play();
                 clouds.pause();
             }
-            // if(index == 3){
-            //     $( "div" ).addClass( "off" );
-            //     $( "#jeezy").addClass( "shady" );
-            //     dirtyGround.pause();
-            //     clouds.pause();
-            // };
             if(index == 3){
+                $( "div" ).addClass( "off" );
+                $( "#threeDee" ).removeClass( "off" );
+                tiedeye.pause();
+                dirtyGround.pause();
+                clouds.pause();
+            };
+            if(index == 4){
                 $( "div" ).addClass( "off" );
                 $( "#mingwalk" ).removeClass( "off" );
                 $( "#tiedeye" ).removeClass( "clear" );
@@ -47,14 +48,14 @@ $(document).ready(function() {
                 dirtyGround.pause();
                 clouds.pause();
             }
-            if(index == 4){
+            if(index == 5){
                 $( "div" ).addClass( "off" );
                 $( "#unclecry" ).removeClass( "off" );
                 tiedeye.pause();
                 dirtyGround.pause();
                 clouds.pause();
             }
-            if(index == 5){
+            if(index == 6){
                 $( "div" ).addClass( "off" );
                 $( "#headspin" ).removeClass( "off" );
                 $( "#clouds" ).removeClass( "clear" );
@@ -67,10 +68,10 @@ $(document).ready(function() {
 
         onLeave: function( index, nextIndex, direction ){
 
-            if(index == 3){
+            if(index == 4){
                 $( "#tiedeye" ).addClass( "clear" );
             }
-            if(index == 5){
+            if(index == 6){
                 $( "#clouds" ).addClass( "clear" );
             }
 

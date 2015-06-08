@@ -102,8 +102,8 @@ a.txt {
 }
 @media all and (orientation:portrait) {
 	.square {
-		width: 100vw;
-		height: 100vw;
+		width: 90vw;
+		height: 90vw;
 	}
 	.bigger-square {
 		width: 100vw;
