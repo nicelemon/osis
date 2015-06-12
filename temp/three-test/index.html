@@ -21,23 +21,39 @@
 
 	<script type="text/javascript">
 		var scene = new THREE.Scene();
-		var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+		var camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 		var renderer = new THREE.WebGLRenderer( { alpha: true } );
 		renderer.setSize( window.innerWidth, window.innerHeight );
 		document.body.appendChild( renderer.domElement );
 
-		var geometry = new THREE.BoxGeometry( 2, 3, 1 );
-		var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-		var cube = new THREE.Mesh( geometry, material );
-		scene.add( cube );
+		var geometry = new THREE.BoxGeometry( 3.5, 4.5, 5.0 );
+		// var material = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('img/cuberface-front.jpg') } );
 
-		camera.position.z = 5;
+
+	var material1 = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('img/cuberface-l-ear.jpg') } );
+    var material2 = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('img/cuberface-r-ear.jpg') } );
+    var material3 = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('img/cuberface-top.jpg') } );
+    var material4 = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('img/cuberface-chin.jpg') } );
+    var material5 = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('img/cuberface-front.jpg') } );
+    var material6 = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('img/cuberface-back.jpg') } );
+  
+    var materials = [material1, material2, material3, material4, material5, material6];
+  
+    var meshFaceMaterial = new THREE.MeshFaceMaterial( materials );
+
+  //   	var cube = new THREE.Mesh( geometry, meshFaceMaterial );
+		// scene.add( cube );
+
+    	mesh = new THREE.Mesh( geometry, meshFaceMaterial );
+    	scene.add( mesh );
+
+		camera.position.z = 8;
 
 		function render() {
 			requestAnimationFrame( render );
-			cube.rotation.x += 0.01;
-			cube.rotation.y += 0.01;
+			mesh.rotation.x += 0.01;
+			mesh.rotation.y += 0.005;
 			renderer.render( scene, camera );
 		}
 		render();
