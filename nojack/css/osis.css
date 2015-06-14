@@ -1,0 +1,129 @@
+/**
+ * osis.tv 1.1.0
+ * https://github.com/nicelemon/osis
+ *
+ * Copyright (C) 2015 osis.tv - A project by @zahgck
+ */
+html {
+	overflow: hidden;
+	height: 100%;
+}
+body {
+	margin: 0px;
+	background-color: blue;
+}
+
+.hide {
+	display: none;
+}
+.centered {
+	margin: auto;
+	top: 0; left: 0; bottom: 0; right: 0;
+	position: absolute;
+}
+section {
+	height: 100vh;
+	width: 100vw;
+}
+#almostEverything {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	overflow: auto;
+	z-index: -1;
+}
+#contentWrapper {
+	z-index: 0;
+	right: 0;
+	position: absolute;
+	-webkit-transition: right 0.3s;
+	-moz-transition: right 0.3s;
+	-o-transition: right 0.3s;
+	-ms-transition: right 0.3s;
+	transition: right 0.3s;
+	-webkit-box-shadow: 20px 2px 66px 26px rgba(0,0,0,0.4);
+	-moz-box-shadow: 20px 2px 66px 26px rgba(0,0,0,0.4);
+	-o-box-shadow: 20px 2px 66px 26px rgba(0,0,0,0.4);
+	-ms-box-shadow: 20px 2px 66px 26px rgba(0,0,0,0.4);
+	box-shadow: 20px 2px 66px 26px rgba(0,0,0,0.4);
+}
+.cover {
+	position: absolute; right: 0; bottom: 0;
+	min-width: 100%; min-height: 100%;
+	width: auto; height: auto;
+	background-size: cover;
+}
+
+/* Nav */
+#nav {
+	position: fixed;
+	z-index: -1;
+	right: 0;
+	text-align: right;
+    padding: 1vw;
+}
+#nav ul {
+    list-style-type: none;
+}
+#nav ul a, #nav .navigation {
+	color: white;
+}
+button {
+	background: none;
+	border: none;
+	padding: 0;
+	outline:0 !important;
+}
+button#menuButton {
+	position: fixed;
+	right: 1.3vw; top: 1.1vw;
+	z-index: 2;
+	height: 3.5vw;
+	width: 3.5vw;
+	cursor: pointer;
+	background-image: url("/img/menu.svg");
+	background-size: contain;
+	-webkit-transition: right 0.3s, opacity 0.3s ease-in-out;
+	-moz-transition: right 0.3s, opacity 0.3s ease-in-out;
+	-o-transition: right 0.3s, opacity 0.3s ease-in-out;
+	-ms-transition: right 0.3s, opacity 0.3s ease-in-out;
+	transition: right 0.3s, opacity 0.3s ease-in-out;
+	opacity: .5;
+}
+button#menuButton:hover {
+	opacity: 1;
+}
+button#menuButton.open {
+	right: 20vw;
+}
+#contentWrapper.open {
+	right: 19vw;
+}
+/*img#absBG {
+	background: url(/img/abs.jpg) no-repeat;
+	position: fixed;
+	z-index: -2;
+}*/
+
+/* BGs */
+.yellowBG {
+	background-color: yellow;
+}
+.redBG {
+	background-color: red;
+}
+.blueBG {
+	background-color: blue;
+}
+.orangeBG {
+	background-color: orange;
+}
+.greenBG {
+	background-color: green;
+}
+.purpleBG {
+	background-color: purple;
+}
+.pinkBG {
+	background-color: pink;
+}
