@@ -21,9 +21,22 @@ body {
 	top: 0; left: 0; bottom: 0; right: 0;
 	position: absolute;
 }
+.shady {
+	-webkit-filter: drop-shadow(14px 17px 5px rgba(0,0,0,0.3));
+	-moz-filter: drop-shadow(14px 17px 5px rgba(0,0,0,0.3));
+	-o-filter: drop-shadow(14px 17px 5px rgba(0,0,0,0.3));
+	-ms-filter: drop-shadow(14px 17px 5px rgba(0,0,0,0.3));
+	filter: drop-shadow(14px 17px 5px rgba(0,0,0,0.3));
+	-webkit-transition: all 0.4s ease-out;
+	-moz-transition: all 0.4s ease-out;
+	-o-transition: all 0.4s ease-out;
+	-ms-transition: all 0.4s ease-out;
+	transition: all 0.4s ease-out;
+}
 section {
 	height: 100vh;
 	width: 100vw;
+	position: relative;
 }
 #almostEverything {
 	height: 100%;
@@ -52,6 +65,10 @@ section {
 	min-width: 100%; min-height: 100%;
 	width: auto; height: auto;
 	background-size: cover;
+}
+.square {
+	height: 100vh;
+	width: 100vh;
 }
 
 /* Nav */
@@ -105,6 +122,109 @@ button#menuButton.open {
 	z-index: -2;
 }*/
 
+/* Animations */
+div#ratcrawl {
+	background-image: url("/img/ratcrawl.png");
+	background-position: 0 0;
+	background-size: 2600%;
+	-webkit-animation: ratcrawl 1.7s steps(26) infinite;
+	-moz-animation: ratcrawl 1.7s steps(26) infinite;
+	-o-animation: ratcrawl 1.7s steps(26) infinite;
+	-ms-animation: ratcrawl 1.7s steps(26) infinite;
+	animation: ratcrawl 1.7s steps(26) infinite;
+}
+@-webkit-keyframes ratcrawl {
+	100% { background-position: -2600%; }
+}
+@-moz-keyframes ratcrawl {
+	100% { background-position: -2600%; }
+}
+@-o-keyframes ratcrawl {
+	100% { background-position: -2600%; }
+}
+@-ms-keyframes ratcrawl {
+	100% { background-position: -2600%; }
+}
+@keyframes ratcrawl {
+	100% { background-position: -2600%; }
+}
+div#unclecry {
+	background-image: url("/img/hu_cry.png");
+    background-position: 0 0;
+    background-size: 2200%;
+    margin-right: 14%;
+    -webkit-animation: unclecry 1.2s steps(22) infinite;
+    -moz-animation: unclecry 1.2s steps(22) infinite;
+    -o-animation: unclecry 1.2s steps(22) infinite;
+    -ms-animation: unclecry 1.2s steps(22) infinite;
+    animation: unclecry 1.2s steps(22) infinite;
+}
+@-webkit-keyframes unclecry {
+    100% { background-position: 2200%; }
+}
+@-moz-keyframes unclecry {
+    100% { background-position: 2200%; }
+}
+@-o-keyframes unclecry {
+    100% { background-position: 2200%; }
+}
+@-ms-keyframes unclecry {
+    100% { background-position: 2200%; }
+}
+@keyframes unclecry {
+    100% { background-position: 2200%; }
+}
+div#headspin {
+	background-image: url("/img/headspin.png");
+    background-position: 0 0;
+    background-size: 3700%;
+    -webkit-animation: headspin 1.7s steps(37) infinite;
+    -moz-animation: headspin 1.7s steps(37) infinite;
+    -o-animation: headspin 1.7s steps(37) infinite;
+    -ms-animation: headspin 1.7s steps(37) infinite;
+    animation: headspin 1.7s steps(37) infinite;
+}
+@-webkit-keyframes headspin {
+    100% { background-position: 3700%; }
+}
+@-moz-keyframes headspin {
+    100% { background-position: 3700%; }
+}
+@-o-keyframes headspin {
+    100% { background-position: 3700%; }
+}
+@-ms-keyframes headspin {
+    100% { background-position: 3700%; }
+}
+@keyframes headspin {
+    100% { background-position: 3700%; }
+}
+div#mingwalk {
+	background-image: url("/img/mingwalk.png");
+    background-position: 0 0;
+    background-size: 1400%;
+    -webkit-animation: mingwalk 1.7s steps(14) infinite;
+    -moz-animation: mingwalk 1.7s steps(14) infinite;
+    -o-animation: mingwalk 1.7s steps(14) infinite;
+    -ms-animation: mingwalk 1.7s steps(14) infinite;
+    animation: mingwalk 1.7s steps(14) infinite;
+}
+@-webkit-keyframes mingwalk {
+    100% { background-position: 1400%; }
+}
+@-moz-keyframes mingwalk {
+    100% { background-position: 1400%; }
+}
+@-o-keyframes mingwalk {
+    100% { background-position: 1400%; }
+}
+@-ms-keyframes mingwalk {
+    100% { background-position: 1400%; }
+}
+@keyframes mingwalk {
+    100% { background-position: 1400%; }
+}
+
 /* BGs */
 .yellowBG {
 	background-color: yellow;
@@ -126,4 +246,7 @@ button#menuButton.open {
 }
 .pinkBG {
 	background-color: pink;
+}
+.skyblueBG {
+	background-color: rgb(74, 197, 232);
 }

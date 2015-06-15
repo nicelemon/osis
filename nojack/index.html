@@ -27,6 +27,7 @@
 			<ul class="navigation" id="menu">
 				<li class="nav-item"><a href="#threeDeeHead">threeDeeHead.obj</a></li>
 				<li class="nav-item"><a href="#ratCrawl">ratcrawl.png</a></li>
+				<li class="nav-item"><a href="#uncleCry">unclecry.png</a></li>
 			</ul>
 			<ul class="navigation" id="etcetera">
 				<li class="nav-item"><a href="https://instagram.com/zahgck/" target="_blank">IG/@zahgck</a></li>
@@ -36,18 +37,74 @@
 		</div>
 		<!-- <img src="img/abs.jpg" id="absBG" class="cover"> -->
 		<div id="contentWrapper">
-			<section id="welcome" class="yellowBG">
+			<section id="welcome" class="purpleBG">
 				<a name="welcome"></a>
+				<img src="img/scoliosis.png" class="centered">
 			</section>
-			<section id="threeDeeHead" class="orangeBG">
+			<section id="threeDeeHead" class="redBG">
 				<a name="threeDeeHead"></a>
 			</section>
-			<section id="ratCrawl" class="redBG">
+			<section id="ratCrawl" class="orangeBG">
 				<a name="ratCrawl"></a>
+				<div id="ratcrawl" class="square centered"></div>
+			</section>
+			<section id="uncleCry" class="yellowBG">
+				<a name="uncleCry"></a>
+				<div id="unclecry" class="square centered"></div>
+			</section>
+			<section id="mingWalk" class="greenBG">
+				<a name="mingWalk"></a>
+				<div id="mingwalk" class="square centered"></div>
+			</section>
+			<section id="headSpin" class="skyblueBG">
+				<a name="headSpin"></a>
+				<div id="headspin" class="square centered"></div>
 			</section>
 		</div>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script type="text/javascript" src="js/osis.js"></script>
+	<script src="js/three.min.js"></script>
+	<script type="text/javascript">
+		var scene = new THREE.Scene();
+		var camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+		var renderer = new THREE.WebGLRenderer( { alpha: true } );
+		renderer.setSize( window.innerWidth, window.innerHeight );
+
+		var container = document.getElementById("threeDeeHead");
+		container.appendChild( renderer.domElement );
+
+		var geometry = new THREE.BoxGeometry( 3.5, 4.5, 5.0 );
+		// var material = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('img/cuberface-front.jpg') } );
+
+
+	var material1 = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('img/cuberface-l-ear.jpg') } );
+    var material2 = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('img/cuberface-r-ear.jpg') } );
+    var material3 = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('img/cuberface-top.jpg') } );
+    var material4 = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('img/cuberface-chin.jpg') } );
+    var material5 = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('img/cuberface-front.jpg') } );
+    var material6 = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('img/cuberface-back.jpg') } );
+  
+    var materials = [material1, material2, material3, material4, material5, material6];
+  
+    var meshFaceMaterial = new THREE.MeshFaceMaterial( materials );
+
+  //   	var cube = new THREE.Mesh( geometry, meshFaceMaterial );
+		// scene.add( cube );
+
+    	mesh = new THREE.Mesh( geometry, meshFaceMaterial );
+    	scene.add( mesh );
+
+		camera.position.z = 8;
+
+		function render() {
+			requestAnimationFrame( render );
+			mesh.rotation.x += 0.01;
+			mesh.rotation.y += 0.005;
+			renderer.render( scene, camera );
+		}
+		render();
+	</script>
 </body>
 </html>

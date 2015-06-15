@@ -17,3 +17,26 @@ $(document).ready(function() {
         e.preventDefault();
     });
 });
+
+$("#nav a").on("click", function(e) {
+    var $this = $(this),
+          $href = $this.attr("href"),
+          $target = $($href),
+          $navHeight = $("#nav").outerHeight(),
+          $targetTopY = $target.offset().top - $navHeight;
+    
+    /* update active class for nav elements */
+    $("#nav a").removeClass("active");
+    $this.addClass("active");
+    
+    /* smooth scroll */
+    TweenMax.to($(window), 1, {
+        scrollTo: {
+            y: $targetTopY,
+            autoKill: true
+        },
+        ease: "Expo.easeInOut"
+    });
+    
+    e.preventDefault();
+});
